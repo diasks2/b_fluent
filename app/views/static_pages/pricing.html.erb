@@ -1,2 +1,22 @@
-<h1>StaticPages#pricing</h1>
-<p>Find me in app/views/static_pages/pricing.html.erb</p>
+<% provide(:title, I18n.t(:pricing)) %>
+<div class="container">
+   <div class="hero-unit">
+        <h1><%=t :pricing %></h1>
+        <h2>自分の英語の学習経過や成績推移を確認できます。</h2>
+   
+      <div class="row-fluid">
+        <div class="span6">
+          <h2>期間契約（一括払い）</h2>
+           <p>１ヵ月あたり500円 12ヵ月6,000円(税込み)</p>
+           <p><a class="btn" href="#">スタート &raquo;</a></p>
+        </div>
+        <div class="span6">
+          <h2>継続契約</h2>
+           <p>１ヵ月あたり1,000円 毎月自動更新(税込み)</p>
+           <p><a class="btn" href="#">スタート &raquo;</a></p>
+        </div>
+      <div>
+        <%= link_to "無料トライアル", "#", class: "btn btn-large btn-primary" %>
+   </div> 
+
+</div>

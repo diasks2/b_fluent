@@ -1,2 +1,43 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="center hero-unit">
+ 
+ <h1><%=t :welcome %></h1>
+ <h2>自分の英語の<strong>学習経過</strong>や<strong>成績推移</strong>を確認できます。</h2>
+
+<%= link_to "無料トライアル", "#", class: "btn btn-large btn-primary" %>
+
+<div class="row-fluid">
+  <div class="span4">
+ <h2>1</h2>
+ <h3>自分の英語試験のスコアを入れて</h2>
+
+
+<%= image_tag("Left.png", alt: "Step 1") %>
+
+  </div>
+  <div class="span4">
+  <h2>2</h2>
+  <h3>月毎にBiFluentのチェックテストを受けて</h2>
+<%= image_tag("Middle.png", alt: "Step 2") %>
+
+  </div>
+  <h2>3</h2>
+<h3>簡単で見やすい勉強史と上達を確認できます。</h2>
+    <div class="span4">
+<%= image_tag("Right.png", alt: "Step 3") %>
+
+  </div>
+
+</div>
+  <blockquote>
+  <p>Success is steady progress toward one's personal goals.</p>
+  <small>Jim Rohn</small>
+</blockquote>
+
+</div>
+
+
+
+
+
+
+

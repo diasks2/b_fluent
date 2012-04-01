@@ -1,13 +1,10 @@
 BFluent::Application.routes.draw do
   get "static_pages/home"
 
-  get "static_pages/about"
-
-  get "static_pages/contact"
-
-  get "static_pages/pricing"
-
-  get "static_pages/principles"
+  match '/about',   to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'
+  match '/principles',    to: 'static_pages#principles'
+  match '/pricing',    to: 'static_pages#pricing'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
