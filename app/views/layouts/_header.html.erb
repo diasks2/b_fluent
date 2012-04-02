@@ -9,19 +9,19 @@
           <li class="divider-vertical"></li>
           <li><%= link_to t(:principles), principles_path %></li>
           <li class="divider-vertical"></li>
-          <%# if signed_in? %>
+          <% if signed_in? %>
           <li id="fat-menu" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=t :account %><b class="caret"></b></a>
           <ul class="dropdown-menu">
-          <li><%= link_to t(:profile), "#" %></li>
+          <li><%= link_to t(:profile), current_user %></li>
           <li><%= link_to t(:settings), "#" %></li>
           <li class="divider"></li>
-          <li><%= link_to t(:signout), "#", method: "delete" %></li>
+          <li><%= link_to t(:signout), signout_path, method: "delete" %></li>
           </ul>
           </li>
-          <%# else %>
-          <li><%= link_to t(:signin), "#" %></li>
-          <%# end %>
+          <% else %>
+          <li><%= link_to t(:signin), signin_path %></li>
+          <% end %>
           <li class="divider-vertical"></li>
         </ul>
       </nav>

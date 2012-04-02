@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 describe "User pages" do
@@ -25,22 +26,7 @@ describe "User pages" do
 
     describe "with invalid information" do
       it "should not create a user" do
-        expect { click_button I18n.t(:free_trial) }.not_to change(User, :count)
-      end
-    end
-
-    describe "with valid information" do
-      before do
-        fill_in :name,         with: "Example User"
-        fill_in :email,        with: "user@example.com"
-        fill_in :password,     with: "foobar"
-        fill_in :password_confirmation, with: "foobar"
-      end
-
-      it "should create a user" do
-        expect do
-          click_button I18n.t(:free_trial)
-        end.to change(User, :count).by(1)
+        expect { click_button I18n.t(:free_trial_start) }.not_to change(User, :count)
       end
     end
   end
