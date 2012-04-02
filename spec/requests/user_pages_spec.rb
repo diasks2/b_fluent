@@ -30,4 +30,18 @@ describe "User pages" do
       end
     end
   end
+
+  describe "edit" do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      sign_in user
+      visit edit_user_path(user)
+    end
+
+    describe "page" do
+      it { should have_selector('h1',    text: I18n.t(:update_profile)) }
+      it { should have_selector('title', text: I18n.t(:settings)) }
+      it { should have_link(I18n.t(:change), href: 'http://gravatar.com/emails') }
+    end
+  end
 end

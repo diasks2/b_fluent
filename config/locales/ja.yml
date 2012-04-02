@@ -15,9 +15,14 @@ ja:
   profile: プロフィールを見る
   newuser: BiFluent始めませんか？
   signupnow: BiFluentに登録する
+  update_profile: プロフィールを更新
+  please_signin: ログインしてください。
+  profile_updated: 設定を保存しました。
   invalidemail: メールアドレスと、パスワードの組み合わせがまちがっているりょうです。
   account: アカウント
   settings: アカウント情報
+  save_changes: 変更を保存
+  change: 変更
   activerecord:
     attributes:
       user:
