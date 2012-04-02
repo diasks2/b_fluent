@@ -40,4 +40,12 @@ describe "Static pages" do
     it { should have_selector('h1',    text: I18n.t(:contact)) }
     it { should have_selector('title', text: full_title(I18n.t(:contact))) }
   end
+
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link I18n.t(:about)
+    page.should have_selector 'title', text: full_title(I18n.t(:about))
+    click_link I18n.t(:contact)
+    page.should have_selector 'title', text: full_title(I18n.t(:contact))
+  end
 end
