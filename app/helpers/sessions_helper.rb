@@ -20,6 +20,13 @@ module SessionsHelper
     clear_return_to
   end
 
+  def signed_in_user
+      unless signed_in?
+      store_location
+      redirect_to signin_path, notice: I18n.t(:please_signin) unless signed_in?
+    end
+  end
+
   def store_location
     session[:return_to] = request.fullpath
   end

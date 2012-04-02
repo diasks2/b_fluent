@@ -1,4 +1,5 @@
 <% provide(:title, @user.name) %>
+<div class="center hero-unit">
 <div class="row">
   <aside class="span4">
     <section>
@@ -9,3 +10,39 @@
     </section>
   </aside>
 </div>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#home" data-toggle="tab"><i class="icon-home"></i> Home</a></li>
+  <li><a href="#toeic" data-toggle="tab">TOEIC</a></li>
+  <li><a href="#eiken" data-toggle="tab">英検</a></li>
+  <li><a href="#toefl" data-toggle="tab">TOEFL</a></li>
+  <li><a href="#casec" data-toggle="tab">CASEC</a></li>
+  <li><a href="#ielts" data-toggle="tab">IELTS</a></li>
+  
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="home">...</div>
+  <div class="tab-pane" id="toeic">
+   <% if @user.toeictests.any? %>
+      <h2>TOEIC Tests (<%= @user.toeictests.count %>)</h2>
+      <ol class="toeictests">
+        <%= render @toeictests %>
+      </ol>
+      <%= will_paginate @toeictests %>
+    <% end %>
+  </div>
+  <div class="tab-pane" id="eiken">eiken</div>
+  <div class="tab-pane" id="toefl">toelf</div>
+  <div class="tab-pane" id="casec">casec</div>
+  <div class="tab-pane" id="ielts">ielts</div>
+</div>
+ 
+</div>
+
+<script>
+  $('a[data-toggle="tab"]').on('shown', function (e) {
+  e.target // activated tab
+  e.relatedTarget // previous tab
+})
+</script>

@@ -18,6 +18,11 @@ ja:
   update_profile: プロフィールを更新
   please_signin: ログインしてください。
   profile_updated: 設定を保存しました。
+  input_toeic: TOEICスコアを保存
+  tl_score: リスニングスコア
+  tr_score: リーディングスコア
+  ttotal_score: TOEICスコア
+  toeic_date: 試験日
   invalidemail: メールアドレスと、パスワードの組み合わせがまちがっているりょうです。
   account: アカウント
   settings: アカウント情報
@@ -31,6 +36,10 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワードの再入力
+      toeictest:
+        t_date: TOEICテストの年月日
+        l_score: TOEICのリスニングスコア
+        r_score: TOEICのリーディングスコア
   date:
     abbr_day_names:
     - 日
@@ -133,6 +142,8 @@ ja:
       accepted: を受諾してください。
       blank: を入力してください。
       confirmation: と確認の入力が一致しません。
+      before: は不正な値です。
+      not_a_date: は不正な値です。
       empty: を入力してください。
       equal_to: は%{count}にしてください。
       even: は偶数にしてください。

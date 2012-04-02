@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class StaticPagesController < ApplicationController
   def home
+    @toeictest = current_user.toeictests.build if signed_in?
   end
 
   def about

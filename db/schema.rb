@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120402055127) do
+ActiveRecord::Schema.define(:version => 20120402060421) do
+
+  create_table "toeictests", :force => true do |t|
+    t.datetime "t_date"
+    t.integer  "l_score"
+    t.integer  "r_score"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "toeictests", ["user_id", "t_date"], :name => "index_toeictests_on_user_id_and_t_date"
 
   create_table "users", :force => true do |t|
     t.string   "name"
