@@ -1,0 +1,18 @@
+<li>
+  
+  <p><span class="r_score"><%=t :ttotal_score %>: <%= toeictest.r_score + toeictest.l_score %></span></p>
+  <p><span class="l_score"><%=t :tl_score %>: <%= toeictest.l_score %></span></p>
+  <p><span class="r_score"><%=t :tr_score %>: <%= toeictest.r_score %></span></p>
+  <p><span class="timestamp"><%=t :toeic_date %>: <%= toeictest.t_date.to_s(:j_date) %></span></p>
+
+   <% if current_user?(toeictest.user) %>
+    <%= link_to "delete", toeictest, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   toeictest.t_date %>
+  <% end %>
+
+</li>
+
+
+
+
