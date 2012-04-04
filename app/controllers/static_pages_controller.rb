@@ -8,6 +8,7 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+    @toeictest = current_user.toeictests.paginate(page: params[:page]) if signed_in?
   end
 
   def pricing
