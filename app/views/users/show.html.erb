@@ -31,6 +31,8 @@
       </ol>
       <%= will_paginate @toeictests %>
     <% end %>
+    <div id="chartdiv" style="width: 100%; height: 400px;"></div>
+</div>
   </div>
   <div class="tab-pane" id="eiken">eiken</div>
   <div class="tab-pane" id="toefl">toelf</div>
@@ -45,5 +47,72 @@
   e.target // activated tab
   e.relatedTarget // previous tab
 })
+
+var chart;
+
+    var chartData = <%= raw @toeictest.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"l_score\"/, "l_score").gsub(/\"r_score\"/, "r_score").gsub(/\"t_date\"/, "t_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id")  %>;
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+                chart.dataProvider = chartData;
+                chart.categoryField = "t_date";
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridAlpha = 0.1;
+                categoryAxis.axisAlpha = 0;
+                categoryAxis.gridPosition = "start";
+                categoryAxis.parseDates = "true";
+                categoryAxis.equalSpacing = "true";
+                categoryAxis.boldPeriodBeginning = "false";
+
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.stackType = "regular";
+                valueAxis.gridAlpha = 0.1;
+                valueAxis.axisAlpha = 0;
+                chart.addValueAxis(valueAxis);
+
+                // GRAPHS
+                // first graph    
+                var graph = new AmCharts.AmGraph();
+                graph.title = "<%=t :tr_score %>";
+                graph.labelText = "[[value]]";
+                graph.valueField = "r_score";
+                graph.type = "column";
+                graph.lineAlpha = 1;
+                graph.fillAlphas = 1;
+                graph.fillColors =  "#abacab";
+                graph.lineColor = "000000";
+                graph.lineThickness = 1.5;
+                chart.columnWidth = 0.2 ;
+                chart.addGraph(graph);
+
+
+                // second graph              
+                graph = new AmCharts.AmGraph();
+                graph.title = "<%=t :tl_score %>";
+                graph.labelText = "[[value]]";
+                graph.valueField = "l_score";
+                graph.type = "column";
+                graph.lineAlpha = 1;
+                graph.fillAlphas = 1;
+                graph.lineColor = "000000";
+                graph.fillColors = "#d0d2cf";
+                graph.lineThickness = 1.5;
+                chart.addGraph(graph);
+
+                // LEGEND                  
+                var legend = new AmCharts.AmLegend();
+                chart.addLegend(legend);
+                legend.align = "center";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+
 
 </script>

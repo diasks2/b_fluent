@@ -14,7 +14,7 @@ BFluent::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/principles',    to: 'static_pages#principles'
   match '/pricing',    to: 'static_pages#pricing'
-
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
