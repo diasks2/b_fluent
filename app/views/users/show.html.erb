@@ -41,74 +41,89 @@
  
 </div>
 
-<script type="text/javascript">
+ <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @toeictest.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"l_score\"/, "l_score").gsub(/\"r_score\"/, "r_score").gsub(/\"t_date\"/, "t_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id")  %>;
+            var chartData = [{
+                country: "USA",
+                visits: 4025
+            }, {
+                country: "China",
+                visits: 1882
+            }, {
+                country: "Japan",
+                visits: 1809
+            }, {
+                country: "Germany",
+                visits: 1322
+            }, {
+                country: "UK",
+                visits: 1122
+            }, {
+                country: "France",
+                visits: 1114
+            }, {
+                country: "India",
+                visits: 984
+            }, {
+                country: "Spain",
+                visits: 711
+            }, {
+                country: "Netherlands",
+                visits: 665
+            }, {
+                country: "Russia",
+                visits: 580
+            }, {
+                country: "South Korea",
+                visits: 443
+            }, {
+                country: "Canada",
+                visits: 441
+            }, {
+                country: "Brazil",
+                visits: 395
+            }, {
+                country: "Italy",
+                visits: 386
+            }, {
+                country: "Australia",
+                visits: 384
+            }, {
+                country: "Taiwan",
+                visits: 338
+            }, {
+                country: "Poland",
+                visits: 328
+            }];
+
 
             AmCharts.ready(function () {
                 // SERIAL CHART
                 chart = new AmCharts.AmSerialChart();
                 chart.dataProvider = chartData;
-                chart.categoryField = "t_date";
+                chart.categoryField = "country";
+                chart.startDuration = 1;
 
                 // AXES
                 // category
                 var categoryAxis = chart.categoryAxis;
-                categoryAxis.gridAlpha = 0.1;
-                categoryAxis.axisAlpha = 0;
+                categoryAxis.labelRotation = 90;
                 categoryAxis.gridPosition = "start";
-                categoryAxis.parseDates = "true";
-                categoryAxis.equalSpacing = "true";
-                categoryAxis.boldPeriodBeginning = "false";
-
 
                 // value
-                var valueAxis = new AmCharts.ValueAxis();
-                valueAxis.stackType = "regular";
-                valueAxis.gridAlpha = 0.1;
-                valueAxis.axisAlpha = 0;
-                chart.addValueAxis(valueAxis);
+                // in case you don"t want to change default settings of value axis,
+                // you don"t need to create it, as one value axis is created automatically.
 
-                // GRAPHS
-                // first graph    
+                // GRAPH
                 var graph = new AmCharts.AmGraph();
-                graph.title = "<%=t :tr_score %>";
-                graph.labelText = "[[value]]";
-                graph.valueField = "r_score";
+                graph.valueField = "visits";
+                graph.balloonText = "[[category]]: [[value]]";
                 graph.type = "column";
-                graph.lineAlpha = 1;
-                graph.fillAlphas = 1;
-                graph.fillColors =  "#abacab";
-                graph.lineColor = "000000";
-                graph.lineThickness = 1.5;
-                chart.columnWidth = 0.2 ;
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 0.8;
                 chart.addGraph(graph);
 
-
-                // second graph              
-                graph = new AmCharts.AmGraph();
-                graph.title = "<%=t :tl_score %>";
-                graph.labelText = "[[value]]";
-                graph.valueField = "l_score";
-                graph.type = "column";
-                graph.lineAlpha = 1;
-                graph.fillAlphas = 1;
-                graph.lineColor = "000000";
-                graph.fillColors = "#d0d2cf";
-                graph.lineThickness = 1.5;
-                chart.addGraph(graph);
-
-                // LEGEND                  
-                var legend = new AmCharts.AmLegend();
-                chart.addLegend(legend);
-                legend.align = "center";
-
-                // WRITE
                 chart.write("chartdiv");
             });
-
-</script>
-
-
-
+        </script>
