@@ -33,6 +33,7 @@
       </ol>
       <%= will_paginate @toeictests %>
     <% end %>
+  
     <div id="chartdiv" style="width: 100%; height: 400px;"></div>
 </div>
   <div class="tab-pane" id="eiken">eiken</div>
@@ -44,6 +45,17 @@
 </div>
 
  <script type="text/javascript">
+
+$(function() {
+
+  var $tab = $('#toeic');
+
+   $('a.show', $tab).show( function() {
+
+
+   
+
+
             var chart;
 
             var chartData = [{
@@ -128,4 +140,6 @@
 
                 chart.write("chartdiv");
             });
+
+});
         </script>
