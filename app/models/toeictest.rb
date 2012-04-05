@@ -7,5 +7,5 @@ class Toeictest < ActiveRecord::Base
   validates :r_score, presence: true, :numericality => { :only_integer => true, :greater_than_or_equal_to => 5, :less_than_or_equal_to => 495 }
 
   validates :user_id, presence: true
-  default_scope order: 'toeictests.t_date DESC'
+  default_scope order: 'toeictests.t_date ASC'
 end
