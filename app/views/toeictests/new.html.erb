@@ -1,3 +1,9 @@
+<% if signed_in? %>  
+
   <h1>New post</h1>
-  
+
   <%= render 'shared/toeictest_form' %>
+
+  <% else %>
+ <%= redirect_to root_path  %>
+  <% end %>
