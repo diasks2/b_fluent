@@ -1,9 +1,2 @@
-<% if signed_in? %>  
-
-  <h1>New post</h1>
-
-  <%= render 'shared/toeictest_form' %>
-
-  <% else %>
- <%= redirect_to "/sessions/new.html"  %>
-  <% end %>
+<h1>New post</h1>
+<%= render 'shared/toeictest_form' %>
