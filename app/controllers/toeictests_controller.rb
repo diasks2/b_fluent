@@ -1,6 +1,16 @@
 class ToeictestsController < ApplicationController
-  before_filter :signed_in_user, only: [:create, :destroy]
+  before_filter :signed_in_user, only: [ :create, :destroy]
   before_filter :correct_user,   only: :destroy
+
+
+def new
+  @toeictest = Toeictest.new
+ 
+  respond_to do |format|
+    format.html  # new.html.erb
+    format.json  { render :json => @toeictest }
+  end
+end
 
   def create
     @toeictest = current_user.toeictests.build(params[:toeictest])
