@@ -2,7 +2,7 @@
 <%= form_for(@toeictest) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="span4">
-<p><label for="date"><%=t :toeic_date %></label></p> 
+<p><label for="date"><%=t :test_date %></label></p> 
     <%= f.datepicker :t_date %>
     </div>
     <br>

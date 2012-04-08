@@ -18,11 +18,12 @@ ja:
   update_profile: プロフィールを更新
   please_signin: ログインしてください。
   profile_updated: 設定を保存しました。
-  input_toeic: TOEICスコアを保存
+  input_toeic: TOEIC®スコアを保存
+  input_casec: CASECスコアを保存
   tl_score: リスニングスコア
   tr_score: リーディングスコア
-  ttotal_score: TOEICスコア
-  toeic_date: 試験日
+  ttotal_score: TOEIC®スコア
+  test_date: 試験日
   invalidemail: メールアドレスと、パスワードの組み合わせがまちがっているりょうです。
   account: アカウント
   settings: アカウント情報
@@ -37,9 +38,9 @@ ja:
         password: パスワード
         password_confirmation: パスワードの再入力
       toeictest:
-        t_date: TOEICテストの年月日
-        l_score: TOEICのリスニングスコア
-        r_score: TOEICのリーディングスコア
+        t_date: TOEIC®テストの年月日
+        l_score: TOEIC®のリスニングスコア
+        r_score: TOEIC®のリーディングスコア
   date:
     abbr_day_names:
     - 日

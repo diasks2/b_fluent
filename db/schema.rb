@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120402060421) do
+ActiveRecord::Schema.define(:version => 20120408143540) do
+
+  create_table "casecs", :force => true do |t|
+    t.date     "c_date"
+    t.integer  "c_one"
+    t.integer  "c_two"
+    t.integer  "c_three"
+    t.integer  "c_four"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "casecs", ["user_id", "c_date"], :name => "index_casecs_on_user_id_and_c_date"
 
   create_table "toeictests", :force => true do |t|
     t.datetime "t_date"
