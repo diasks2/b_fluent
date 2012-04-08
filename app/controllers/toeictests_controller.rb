@@ -18,7 +18,7 @@ end
       flash[:success] = "TOEIC test created!"
       redirect_to root_path
     else
-      render 'static_pages/home'
+      render 'new'
     end
   end
 
