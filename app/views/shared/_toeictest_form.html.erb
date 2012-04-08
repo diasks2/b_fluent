@@ -1,21 +1,31 @@
+<div class="row-fluid">
 <%= form_for(@toeictest) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-
-    <p><label for="amount_r">TOEIC®のリーディングスコア (5点の刻み値):</label>
-    <div id="slider_r"></div>
-	<input type="text" id="amount_r" style="border: 0px solid #000000; color:#f6931f; font-weight:bold; background-color:transparent;" readonly="readonly" />
-
-</p>
-<p><label for="amount_l">TOEIC®のリスニングスコア (5点の刻み値):</label>
-    <div id="slider_l"></div>
-    <input type="hidden" id="amount_l" style="border:0; color:#f6931f; font-weight:bold;" /></p>
-
-    <p><label for="date"><%=t :toeic_date %></label></p> 
+  <div class="span4">
+<p><label for="date"><%=t :toeic_date %></label></p> 
     <%= f.datepicker :t_date %>
+    </div>
+    <br>
+<div class="span8">
+    <p><label for="amount_r">TOEIC®のリーディングスコア (5点の刻み値):</label></p>
+    <div id="slider_r"></div>
+	<div id="amount_r" style="border: 0px solid #000000; color:#f6931f; font-weight:bold; background-color:transparent;" />200</div>
+
+</div>
+    <br>
+<div class="span8">
+<p><label for="amount_l">TOEIC®のリスニングスコア (5点の刻み値):</label></p>
+    <div id="slider_l"></div>
+    <div id="amount_l" style="border:0; color:#f6931f; font-weight:bold;" />200</div>
+</div>
+    <br>
+ <div class="span12">
     <%= f.hidden_field :r_score %>
     <%= f.hidden_field :l_score %>
     <%= f.submit I18n.t(:input_toeic), class: "btn btn-large btn-primary" %>
+</div>
 <% end %>
+</div>
 	<script>
 
 	$(function() {
@@ -25,7 +35,7 @@
 			max: 495,
 			step: 5,
 			slide: function( event, ui ) {
-				$( "#amount_r" ).val( ui.value );
+				$( "#amount_r" ).html( ui.value );
 			},
 
 			change: function(event, ui) {
@@ -42,7 +52,7 @@
 			max: 495,
 			step: 5,
 			slide: function( event, ui ) {
-				$( "#amount_l" ).val( ui.value );
+				$( "#amount_l" ).html( ui.value );
 			},
 
 			change: function(event, ui) {
