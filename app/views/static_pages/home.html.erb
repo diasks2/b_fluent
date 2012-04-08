@@ -1,61 +1,173 @@
 <% if signed_in? %>
-<div class="center hero-unit"> 
+<div class="center kevin-unit"> 
   <div class="row">
-    <aside class="span4">
+    <div class="span6">
       <section>
-        <%= link_to "Input New Test Score", toeic_input_path, class: "btn btn-large btn-primary" %>
-      </section>
-    </aside>
-  </div>  
+       
+　　　 <%= link_to "BiFluentのテストを受けて", "#", class: "btn btn-primary" %>
+</div>
+<div class="span6">
+<div class="btn-toolbar">
+<div class="btn-group">
+  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+    テストのスコアを入れて
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><%= link_to 'TOEIC®', toeic_input_path %></li>
+    <li><%= link_to 'STEP 英検', '#' %></li>
+    <li><%= link_to 'TOEFL®', '#' %></li>
+    <li><%= link_to 'CASEC', '#' %></li>
+    <li><%= link_to 'IELTS', '#' %></li>
+  </ul>
+</div>
+</div>
+</div>
+
+</section>
+ </div>
+
+ <div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div>
+</div>
+
+</div>  
 </div>
 <% else %>
 
-<div class="center hero-unit">
- 
- <h1><%=t :welcome %></h1>
- <h2>自分の英語の<strong>学習経過</strong>や<strong>成績推移</strong>を確認できます。</h2>
+<div class="center kevin-unit">
+
+ <h1>あなたの英語力のレベルを知っていますか？</h1>
+ <a href="#" data-controls-modal="modal-from-dom" data-backdrop="true" class="video-play">play</a>
+ <br/>
+ <br/>
 
 <%= link_to I18n.t(:free_trial), signup_path, class: "btn btn-large btn-primary" %>
 
+<br/>
 
-
-
-
-   <title>testapp</title>
+   <title>BiFluent</title>
     
-        <h2>Example carousel</h2>
-        <p>Watch the slideshow below.</p>
         <div id="myCarousel" class="carousel slide">
             <div class="carousel-inner">
                 <div class="item active">
                    <%= image_tag("Left.png", alt: "Step 1") %>
-                    <div class="carousel-caption">
-                        <h4>ポイント１</h4>
-                        <p>月毎にBiFluentのチェックテストを受けて</p>
-                    </div>
                 </div>
                 <div class="item">
                     <%= image_tag("Middle.png", alt: "Step 2") %>
-                    <div class="carousel-caption">
-                        <h4>ポイント２</h4>
-                        <p>月毎にBiFluentのチェックテストを受けて</p>
-                    </div>
                 </div>
                 <div class="item">
                   <%= image_tag("Right.png", alt: "Step 3") %>
-                    <div class="carousel-caption">
-                        <h4>ポイント３</h4>
-                        <p>簡単で見やすい勉強史と上達を確認できます。</p>
-                    </div>
                 </div>
             </div>
             <!-- Carousel nav -->
             <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
         </div>
-
+</div>
 </div>
 <% end %> 
+
+
+<script type="text/javascript">
+            var chart;
+
+    var chartData = <%= raw @toeictest.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"l_score\"/, "l_score").gsub(/\"r_score\"/, "r_score").gsub(/\"t_date\"/, "t_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id")  %>;
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+                chart.dataProvider = chartData;
+                chart.categoryField = "t_date";
+                chart.columnWidth = 0.1 ;
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridAlpha = 0.1;
+                categoryAxis.axisAlpha = 0;
+                categoryAxis.gridPosition = "start";
+                categoryAxis.parseDates = "true";
+                categoryAxis.equalSpacing = "true";
+                categoryAxis.boldPeriodBeginning = "false";
+
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.stackType = "regular";
+                valueAxis.gridAlpha = 0.1;
+                valueAxis.axisAlpha = 0;
+                valueAxis.maximum = 990
+                chart.addValueAxis(valueAxis);
+
+                // GRAPHS
+                // TOEIC Reading    
+                var graph = new AmCharts.AmGraph();
+                graph.title = "TOEIC®<%=t :tr_score %>";
+                graph.labelText = "[[value]]";
+                graph.valueField = "r_score";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#4265a6";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+
+                // TOEIC Listening             
+                graph = new AmCharts.AmGraph();
+                graph.title = "TOEIC®<%=t :tl_score %>";
+                graph.labelText = "[[value]]";
+                graph.valueField = "l_score";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#91a6cc";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+                // LEGEND                  
+                var legend = new AmCharts.AmLegend();
+                chart.addLegend(legend);
+                legend.align = "center";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+
+</script>
+
+  <script type="text/javascript" src="/assets/modal-video.js"></script>
+        
+  <script charset="utf-8" type="text/javascript">
+    $(function() {
+        $('.video-play').click(function() {        
+            $('.my-modal').on('show', function() {
+              $('.my-modal').html($('#modal-contents').html());
+            }).on('hidden', function() {
+              $('.my-modal').html('');
+            }).modal({
+                backdrop: true,
+                keyboard: true
+            }).css({
+                width: 'auto',
+                'margin-left': function () {
+                    return -($(this).width() / 2);
+                }
+            });    
+        });
+      
+       
+    });
+  </script>
+
+    <!-- modal content -->
+    <script type="text/html" id="modal-contents">
+      <iframe src="https://player.vimeo.com/video/39962822?byline=0&amp;portrait=0&amp;color=62d94e&amp;autoplay=1" width="750" height="422" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </script>
+  
+    <div id="modal-from-dom" class="modal fade my-modal">
+    </div>
+
 
 
 

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @toeictests = @user.toeictests.paginate(page: params[:page])
+    @toeictests = @user.toeictests.paginate(page: params[:page], per_page: 5)
   end
 
   def new

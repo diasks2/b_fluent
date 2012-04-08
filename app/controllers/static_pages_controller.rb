@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class StaticPagesController < ApplicationController
   def home
-    @toeictest = current_user.toeictests.build if signed_in?
+  @toeictest = current_user.toeictests.paginate(page: params[:page]) if signed_in?
   end
 
   def about

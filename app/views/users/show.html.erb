@@ -1,127 +1,43 @@
 <% provide(:title, @user.name) %>
 <div class="center hero-unit">
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
+  　<div class="span4">
+  
         <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
-
-<div id="chartdiv" style="width: 100%; height: 400px;"></div>
-
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#home" data-toggle="tab"><i class="icon-home"></i> Home</a></li>
-  <li><a href="#toeic" data-toggle="tab">TOEIC</a></li>
   
-</ul>
+    
+  　</div>
+    <div class="span4">
+      <h1><%= @user.name %></h1>
+    　　BiFluent since: signupdate
+  　</div>
+</br>
+</br>
+</br>
+</br>
+
+　　　　　<ul class="nav nav-tabs">
+　<li class="active"><a href="#home" data-toggle="tab"><i class="icon-home"></i> ホーム</a></li>
+　<li><a href="#bifluent" data-toggle="tab"><i class="icon-leaf"></i> BiFluent</a></li>
+  <li><a href="#toeic" data-toggle="tab">TOEIC®</a></li>
+  <li><a href="#step" data-toggle="tab">STEP 英検</a></li>
+  <li><a href="#toefl" data-toggle="tab">TOEFL®</a></li>
+  <li><a href="#casec" data-toggle="tab">CASEC</a></li>
+  <li><a href="#ielts" data-toggle="tab">IELTS</a></li>
+　　　　　</ul>
  
-<div class="tab-content">
-  <div class="tab-pane active" id="home">...</div>
-  <div class="tab-pane" id="toeic">
-   <% if @user.toeictests.any? %>
-      <h2>TOEIC Tests (<%= @user.toeictests.count %>)</h2>
-      <ol class="toeictests">
-        <%= render @toeictests %>
-      </ol>
-      <%= will_paginate @toeictests %>
-    <% end %>
-  
-    <div id="chartdiv" style="width: 100%; height: 400px;"></div>
+　<div class="tab-content">
+  　<div class="tab-pane active" id="home">TOEIC Tests (<%= @user.toeictests.count %>)</div>
+  　<div class="tab-pane" id="bifluent">BiFluent</div>
+  　<div class="tab-pane" id="toeic"><%= render 'toeic_p' %></div>
+ 　 <div class="tab-pane" id="step">Step</div>
+ 　 <div class="tab-pane" id="toefl">toelf</div>
+　　<div class="tab-pane" id="casec">casec</div>
+　　<div class="tab-pane" id="ielts">ielts</div>
+ </div>
+
+
+
+
 </div>
- 
 </div>
- 
-</div>
-
- <script type="text/javascript">
-
-            var chart;
-
-            var chartData = [{
-                country: "USA",
-                visits: 4025
-            }, {
-                country: "China",
-                visits: 1882
-            }, {
-                country: "Japan",
-                visits: 1809
-            }, {
-                country: "Germany",
-                visits: 1322
-            }, {
-                country: "UK",
-                visits: 1122
-            }, {
-                country: "France",
-                visits: 1114
-            }, {
-                country: "India",
-                visits: 984
-            }, {
-                country: "Spain",
-                visits: 711
-            }, {
-                country: "Netherlands",
-                visits: 665
-            }, {
-                country: "Russia",
-                visits: 580
-            }, {
-                country: "South Korea",
-                visits: 443
-            }, {
-                country: "Canada",
-                visits: 441
-            }, {
-                country: "Brazil",
-                visits: 395
-            }, {
-                country: "Italy",
-                visits: 386
-            }, {
-                country: "Australia",
-                visits: 384
-            }, {
-                country: "Taiwan",
-                visits: 338
-            }, {
-                country: "Poland",
-                visits: 328
-            }];
-
-
-            AmCharts.ready(function () {
-                // SERIAL CHART
-                chart = new AmCharts.AmSerialChart();
-                chart.dataProvider = chartData;
-                chart.categoryField = "country";
-                chart.startDuration = 1;
-
-                // AXES
-                // category
-                var categoryAxis = chart.categoryAxis;
-                categoryAxis.labelRotation = 90;
-                categoryAxis.gridPosition = "start";
-
-                // value
-                // in case you don"t want to change default settings of value axis,
-                // you don"t need to create it, as one value axis is created automatically.
-
-                // GRAPH
-                var graph = new AmCharts.AmGraph();
-                graph.valueField = "visits";
-                graph.balloonText = "[[category]]: [[value]]";
-                graph.type = "column";
-                graph.lineAlpha = 0;
-                graph.fillAlphas = 0.8;
-                chart.addGraph(graph);
-
-                chart.write("chartdiv");
-            });
-
-        </script>

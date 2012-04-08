@@ -1,0 +1,11 @@
+<div id="toeic_pages">
+<% if @user.toeictests.any? %>
+
+<h2>TOEIC Tests (<%= @user.toeictests.count %>)</h2>
+<%= will_paginate @toeictests %>
+<ol class="toeictests">
+<%= render @toeictests %>
+</ol>
+<%= will_paginate @toeictests %>
+<% end %>
+</div>
