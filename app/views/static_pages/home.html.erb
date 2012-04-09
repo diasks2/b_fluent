@@ -78,7 +78,7 @@
                 chart = new AmCharts.AmSerialChart();
                 chart.dataProvider = chartData;
                 chart.categoryField = "t_date";
-                chart.columnWidth = 0.1 ;
+                chart.columnWidth = 0.5 ;
 
                 // AXES
                 // category
@@ -87,6 +87,7 @@
                 categoryAxis.axisAlpha = 0;
                 categoryAxis.gridPosition = "start";
                 categoryAxis.boldPeriodBeginning = "false";
+                categoryAxis.labelRotation = 65;
 
 
                 // value
