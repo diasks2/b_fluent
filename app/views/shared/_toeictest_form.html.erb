@@ -1,9 +1,11 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
 <div class="row-fluid">
 <%= form_for(@toeictest) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="span4">
 <p><label for="date"><%=t :test_date %></label></p> 
-    <%= f.text_field :t_date %>
+    <%= f.datepicker :t_date %>
     </div>
     <br>
 <div class="span8">
