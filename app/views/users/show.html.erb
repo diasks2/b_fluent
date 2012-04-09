@@ -1,13 +1,15 @@
 <% provide(:title, @user.name) %>
+<div class="container">
 <div class="center hero-unit">
 <div class="row">
-  　<div class="span4">
+  　<div class="span2">
   
         <%= gravatar_for @user %>
   　</div>
-    <div class="span4">
+    <div class="span5">
       <h1><%= @user.name %></h1>
-    　　BiFluent since: signupdate
+    　　あなたが「BiFluent」をはじめてから<b><%= time_ago_in_words(
+    @user.created_at) %></b>です。
   　</div>
 </br>
 </br>
@@ -35,7 +37,7 @@
  </div>
 
 
-
+</div>
 
 </div>
 </div>
