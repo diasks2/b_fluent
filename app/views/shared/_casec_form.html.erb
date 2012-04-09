@@ -1,0 +1,139 @@
+<script src="/assets/jquery-ui.js" type="text/javascript"></script>
+<div class="row-fluid">
+<%= form_for(@casec) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="span4">
+<p><label for="date"><%=t :test_date %></label></p> 
+    <%= f.datepicker :c_date %>
+    </div>
+    </br>
+<div class="span8">
+    <p><label for="amount_one">CASEC Section 1:</label></p>
+    <div id="slider_one"></div>
+	<div id="amount_one" style="border: 0px solid #000000; color:#f6931f; font-weight:bold; background-color:transparent;" />200</div>
+
+</div>
+    </br>
+<div class="span8">
+<p><label for="amount_two">CASEC Section 2:</label></p>
+    <div id="slider_two"></div>
+    <div id="amount_two" style="border:0; color:#f6931f; font-weight:bold;" />200</div>
+</div>
+
+    </br>
+<div class="span8">
+<p><label for="amount_three">CASEC Section 3:</label></p>
+    <div id="slider_three"></div>
+    <div id="amount_three" style="border:0; color:#f6931f; font-weight:bold;" />200</div>
+</div>
+
+    </br>
+<div class="span8">
+<p><label for="amount_four">CASEC Section 4:</label></p>
+    <div id="slider_four"></div>
+    <div id="amount_four" style="border:0; color:#f6931f; font-weight:bold;" />200</div>
+</div>
+
+    </br>
+ <div class="span12">
+    <%= f.hidden_field :c_one %>
+    <%= f.hidden_field :c_two %>
+    <%= f.hidden_field :c_three %>
+    <%= f.hidden_field :c_four %>
+    <%= f.submit I18n.t(:input_casec), class: "btn btn-large btn-primary" %>
+</div>
+<% end %>
+</div>
+	<script>
+
+	$(function() {
+		$( "#slider_one" ).slider({
+			value: 150,
+			min: 0,
+			max: 250,
+			step: 1,
+			slide: function( event, ui ) {
+				$( "#amount_one" ).html( ui.value );
+			},
+
+			change: function(event, ui) {
+            $('input#casec_c_one').val(ui.value);
+            }
+		});
+		$( "#amount_one" ).val( $( "#slider_one" ).slider( "value" ) );
+	});
+
+	$(function() {
+		$( "#slider_two" ).slider({
+			value: 150,
+			min: 0,
+			max: 250,
+			step: 1,
+			slide: function( event, ui ) {
+				$( "#amount_two" ).html( ui.value );
+			},
+
+			change: function(event, ui) {
+            $('input#casec_c_two').val(ui.value);
+            }
+		});
+		$( "#amount_two" ).val( $( "#slider_two" ).slider( "value" ) );
+	});
+
+	$(function() {
+		$( "#slider_three" ).slider({
+			value: 150,
+			min: 0,
+			max: 250,
+			step: 1,
+			slide: function( event, ui ) {
+				$( "#amount_three" ).html( ui.value );
+			},
+
+			change: function(event, ui) {
+            $('input#casec_c_three').val(ui.value);
+            }
+		});
+		$( "#amount_three" ).val( $( "#slider_three" ).slider( "value" ) );
+	});
+
+	$(function() {
+		$( "#slider_four" ).slider({
+			value: 150,
+			min: 0,
+			max: 250,
+			step: 1,
+			slide: function( event, ui ) {
+				$( "#amount_four" ).html( ui.value );
+			},
+
+			change: function(event, ui) {
+            $('input#casec_c_four').val(ui.value);
+            }
+		});
+		$( "#amount_four" ).val( $( "#slider_four" ).slider( "value" ) );
+	});
+
+	$(function() {
+		$( "#datepicker" ).datepicker();
+		$.datepicker.regional['ja'] = {
+		closeText: '閉じる',
+		prevText: '&#x3c;前',
+		nextText: '次&#x3e;',
+		currentText: '今日',
+		monthNames: ['1月','2月','3月','4月','5月','6月',
+		'7月','8月','9月','10月','11月','12月'],
+		monthNamesShort: ['1月','2月','3月','4月','5月','6月',
+		'7月','8月','9月','10月','11月','12月'],
+		dayNames: ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
+		dayNamesShort: ['日','月','火','水','木','金','土'],
+		dayNamesMin: ['日','月','火','水','木','金','土'],
+		weekHeader: '週',
+		dateFormat: 'yy/mm/dd',
+		firstDay: 0,
+		isRTL: false,
+		showMonthAfterYear: true,
+		yearSuffix: '年'};
+	$.datepicker.setDefaults($.datepicker.regional['ja']);
+	});
+	</script>

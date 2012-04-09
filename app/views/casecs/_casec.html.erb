@@ -1,10 +1,10 @@
 <li>
   
-  <p><span class="r_score">CASEC total: <%= casec.c_one + casec.c_two + casec.c_three + casec.c_four %></span></p>
+  <p><span class="total_score">CASEC total: <%= casec.c_one + casec.c_two + casec.c_three + casec.c_four %></span></p>
   <p><span class="c_one">CASEC Section 1: <%= casec.c_one %></span></p>
-  <p><span class="c_one">CASEC Section 2: <%= casec.c_two %></span></p>
-  <p><span class="c_one">CASEC Section 3: <%= casec.c_three %></span></p>
-  <p><span class="c_one">CASEC Section 4: <%= casec.c_four %></span></p>
+  <p><span class="c_two">CASEC Section 2: <%= casec.c_two %></span></p>
+  <p><span class="c_three">CASEC Section 3: <%= casec.c_three %></span></p>
+  <p><span class="c_four">CASEC Section 4: <%= casec.c_four %></span></p>
   <p><span class="timestamp">CASEC Date: <%= casec.c_date.to_s(:j_date) %></span></p>
 
    <% if current_user?(casec.user) %>

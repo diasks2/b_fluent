@@ -71,7 +71,7 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @toeictest.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"l_score\"/, "l_score").gsub(/\"r_score\"/, "r_score").gsub(/\"t_date\"/, "t_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id")  %>;
+    var chartData = <%= raw @toeictest.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"l_score\"/, "l_score").gsub(/\"r_score\"/, "r_score").gsub(/\"t_date\"/, "t_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %><%=  raw @casec.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"c_one\"/, "c_one").gsub(/\"c_two\"/, "c_two").gsub(/\"c_three\"/, "c_three").gsub(/\"c_four\"/, "c_four").gsub(/\"c_date\"/, "c_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id")  %>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART

@@ -4,7 +4,7 @@ class Casec < ActiveRecord::Base
 
   validates :c_date, presence: true, :date => { :before => Time.now }
   validates :c_one, presence: true, :numericality => { :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 250 }
-  validates :c_tow, presence: true, :numericality => { :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 250 }
+  validates :c_two, presence: true, :numericality => { :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 250 }
   validates :c_three, presence: true, :numericality => { :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 250 }
   validates :c_four, presence: true, :numericality => { :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 250 }
 

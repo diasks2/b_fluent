@@ -25,12 +25,12 @@
 　　　　　</ul>
  
 　<div class="tab-content">
-  　<div class="tab-pane active" id="home">TOEIC Tests (<%= @user.toeictests.count %>)</div>
+  　<div class="tab-pane active" id="home">TOEIC Tests (<%= @user.toeictests.count %>) CASEC Tests (<%= @user.casecs.count %>)</div>
   　<div class="tab-pane" id="bifluent">BiFluent</div>
   　<div class="tab-pane" id="toeic"><%= render 'toeic_p' %></div>
  　 <div class="tab-pane" id="step">Step</div>
  　 <div class="tab-pane" id="toefl">toelf</div>
-　　<div class="tab-pane" id="casec">casec</div>
+　　<div class="tab-pane" id="casec"><%= render 'casec_p' %></div>
 　　<div class="tab-pane" id="ielts">ielts</div>
  </div>
 
