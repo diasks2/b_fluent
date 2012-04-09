@@ -124,6 +124,16 @@
                 graph.color = '#ffffff';
                 chart.addGraph(graph);
 
+                 // HORIZONTAL GREEN RANGE
+                var guide = new AmCharts.Guide();
+                guide.value = 670;
+                guide.toValue = 800;
+                guide.fillColor = "#00CC00";
+                guide.inside = true;
+                guide.fillAlpha = 0.2;
+                guide.lineAlpha = 0;
+                valueAxis.addGuide(guide);
+
                 // LEGEND                  
                 var legend = new AmCharts.AmLegend();
                 chart.addLegend(legend);
