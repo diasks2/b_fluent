@@ -3,22 +3,25 @@
 <div class="row-fluid">
 <%= form_for(@toeictest) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+<div class="span12">
   <div class="span4">
 <p><label for="date"><%=t :test_date %></label></p> 
     <%= f.datepicker :t_date %>
     </div>
+</div>
     <br>
-<div class="span8">
+<div class="span8" div style="background-image: url(.../images/BigB2.png)">
     <p><label for="amount_r">TOEIC®のリーディングスコア (5点の刻み値):</label></p>
     <div id="slider_r"></div>
-	<div id="amount_r" style="border: 0px solid #000000; color:#f6931f; font-weight:bold; background-color:transparent;" />200</div>
-
+</div>
+    <div class="span4">
+	<div id="amount_r" style="border: 0px solid #000000; color:#7e7f7e; font-size: 30px; font-weight:bold; background-color:transparent;" />200</div>
 </div>
     <br>
 <div class="span8">
 <p><label for="amount_l">TOEIC®のリスニングスコア (5点の刻み値):</label></p>
     <div id="slider_l"></div>
-    <div id="amount_l" style="border:0; color:#f6931f; font-weight:bold;" />200</div>
+    <div id="amount_l" style="border:0; color:#7e7f7e; font-weight:bold;" />200</div>
 </div>
     <br>
  <div class="span12">
@@ -27,6 +30,7 @@
     <%= f.submit I18n.t(:input_toeic), class: "btn btn-large btn-primary" %>
 </div>
 <% end %>
+<%= image_tag("BigB2.png", alt: "BiFluent 'B' logo") %>
 </div>
 	<script>
 $(document).ready(function() {
