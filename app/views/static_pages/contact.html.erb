@@ -1,4 +1,34 @@
 <% provide(:title, I18n.t(:contact)) %>
 <div class="center hero-unit">
 <h1><%=t :contact %></h1>
+
+
+<ul>
+    <li><a href="#tabs-1" onclick="function1();">Nunc tincidunt</a></li>
+    <li><a href="#tabs-2" onclick="function2();">Proin dolor</a></li>
+    <li><a href="#tabs-3" onclick="function3();">Aenean lacinia</a></li>
+</ul>
+
+
+
+
 </div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $( ".selector" ).tabs();
+    });
+
+    function function1(){
+       alert("sometext");
+    }
+
+    function function2(){
+        // your code here
+    }
+
+    function function3(){
+        // your code here
+    }
+</script>

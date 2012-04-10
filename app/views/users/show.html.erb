@@ -15,23 +15,29 @@
 </br>
 </br>
 </br>
+<div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div>
 
 　　　　　<ul class="nav nav-tabs">
-　<li class="active"><a href="#home" data-toggle="tab"><i class="icon-home"></i> ホーム</a></li>
+　<li class="active"><a href="#home" data-toggle="tab" onclick="function1();"><i class="icon-home"></i> ホーム</a></li>
 　<li><a href="#bifluent" data-toggle="tab"><i class="icon-leaf"></i> BiFluent</a></li>
   <li><a href="#toeic" data-toggle="tab">TOEIC®</a></li>
   <li><a href="#step" data-toggle="tab">STEP 英検</a></li>
-  <li><a href="#toefl" data-toggle="tab">TOEFL®</a></li>
+  <li><a href="#toefl" data-toggle="tab" onclick="function1();">TOEFL®</a></li>
   <li><a href="#casec" data-toggle="tab">CASEC</a></li>
   <li><a href="#ielts" data-toggle="tab">IELTS</a></li>
 　　　　　</ul>
  
 　<div class="tab-content">
-  　<div class="tab-pane active" id="home">TOEIC Tests (<%= @user.toeictests.count %>) CASEC Tests (<%= @user.casecs.count %>)</div>
+  　<div class="tab-pane active" id="home">TOEIC Tests (<%= @user.toeictests.count %>) CASEC Tests (<%= @user.casecs.count %>)
+
+<div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div>
+  </div>
   　<div class="tab-pane" id="bifluent">BiFluent</div>
   　<div class="tab-pane" id="toeic"><%= render 'toeic_p' %></div>
  　 <div class="tab-pane" id="step">Step</div>
- 　 <div class="tab-pane" id="toefl">toelf</div>
+ 　 <div class="tab-pane" id="toefl">
+ <div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div>
+ </div>
 　　<div class="tab-pane" id="casec"><%= render 'casec_p' %></div>
 　　<div class="tab-pane" id="ielts">ielts</div>
  </div>
@@ -41,3 +47,84 @@
 
 </div>
 </div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $( ".selector" ).tabs();
+    });
+
+var chart;
+
+   var chartData = <%= raw @toeictest.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"l_score\"/, "l_score").gsub(/\"r_score\"/, "r_score").gsub(/\"t_date\"/, "t_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+
+           AmCharts.ready(function function1() {
+               // SERIAL CHART
+               chart = new AmCharts.AmSerialChart();
+               chart.dataProvider = chartData;
+               chart.categoryField = "t_date";
+               chart.columnWidth = 0.5 ;
+
+               // AXES
+               // category
+               var categoryAxis = chart.categoryAxis;
+               categoryAxis.gridAlpha = 0.1;
+               categoryAxis.axisAlpha = 0;
+               categoryAxis.gridPosition = "start";
+               categoryAxis.boldPeriodBeginning = "false";
+               categoryAxis.labelRotation = 65;
+
+
+               // value
+               var valueAxis = new AmCharts.ValueAxis();
+               valueAxis.stackType = "regular";
+               valueAxis.gridAlpha = 0.1;
+               valueAxis.axisAlpha = 0;
+               valueAxis.maximum = 990
+               chart.addValueAxis(valueAxis);
+
+               // GRAPHS
+               // TOEIC Reading    
+               var graph = new AmCharts.AmGraph();
+               graph.title = "TOEIC®<%=t :tr_score %>";
+               graph.labelText = "[[value]]";
+               graph.valueField = "r_score";
+               graph.type = "column";
+               graph.lineAlpha = 0;
+               graph.fillAlphas = 1;
+               graph.lineColor = "#4265a6";
+               graph.color = '#ffffff';
+               chart.addGraph(graph);
+
+
+               // TOEIC Listening             
+               graph = new AmCharts.AmGraph();
+               graph.title = "TOEIC®<%=t :tl_score %>";
+               graph.labelText = "[[value]]";
+               graph.valueField = "l_score";
+               graph.type = "column";
+               graph.lineAlpha = 0;
+               graph.fillAlphas = 1;
+               graph.lineColor = "#91a6cc";
+               graph.color = '#ffffff';
+               chart.addGraph(graph);
+
+                // HORIZONTAL GREEN RANGE
+               var guide = new AmCharts.Guide();
+               guide.value = 670;
+               guide.toValue = 800;
+               guide.fillColor = "#00CC00";
+               guide.inside = true;
+               guide.fillAlpha = 0.2;
+               guide.lineAlpha = 0;
+               valueAxis.addGuide(guide);
+
+               // LEGEND                  
+               var legend = new AmCharts.AmLegend();
+               chart.addLegend(legend);
+               legend.align = "center";
+
+               // WRITE
+               chart.write("chartdiv");
+           });
+</script>

@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @toeictests = @user.toeictests.paginate(page: params[:page], per_page: 5)
     @casecs = @user.casecs.paginate(page: params[:page], per_page: 5)
+    @toeictest = current_user.toeictests.paginate(page: params[:page])
+    @casec = current_user.casecs.paginate(page: params[:page])
   end
 
   def new
