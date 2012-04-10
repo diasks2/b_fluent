@@ -1,6 +1,12 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 
+@media (max-width: 979px) {
+body { /* Remove padding-top when navbar collapses for narrow viewports */
+padding-top: 0;
+}
+}
+
 /* mixins, variables, etc. */
 $background-color: #7fc837;
 $grayMediumLight: #eaeaea;
