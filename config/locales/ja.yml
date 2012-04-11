@@ -22,6 +22,7 @@ ja:
   input_casec: CASECスコアを保存
   tl_score: リスニングスコア
   tr_score: リーディングスコア
+  toeic_date: TOEIC®テストの年月日
   ttotal_score: TOEIC®スコア
   test_date: 試験日
   invalidemail: メールアドレスと、パスワードの組み合わせがまちがっているりょうです。
