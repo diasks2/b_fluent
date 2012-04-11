@@ -1,6 +1,20 @@
-<div class="center kevin-unit"> 
 <% provide(:title, I18n.t(:signin)) %>
+
+
+<div class="container-fluid">
+	      <div class="row-fluid">
+        <div class="span3">
+        	    <div class="well">
+<%= image_tag("BigB2.png", alt: "BiFluent 'B' logo") %>
+
+</div>
+</div>
+
+ <div class="span6">
+
+<div class="well">
 <h1><%=t :signin %></h1>
+<HR>
 
 </br>
  
@@ -16,6 +30,7 @@
     <% end %>
 
      <p><%=t :newuser %> <%= link_to I18n.t(:signup), signup_path %></p>
-
-
+</div>
+</div>
+</div>
 </div>
