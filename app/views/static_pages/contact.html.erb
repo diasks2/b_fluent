@@ -1,34 +1,27 @@
 <% provide(:title, I18n.t(:contact)) %>
 <div class="center hero-unit">
 <h1><%=t :contact %></h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script>
+    $(function() {
+        $( "#progressbar" ).progressbar({
+            value: 37
+        });
+    });
+    </script>
 
 
-<ul>
-    <li><a href="#tabs-1" onclick="function1();">Nunc tincidunt</a></li>
-    <li><a href="#tabs-2" onclick="function2();">Proin dolor</a></li>
-    <li><a href="#tabs-3" onclick="function3();">Aenean lacinia</a></li>
-</ul>
+
+<div class="demo">
+
+<div id="progressbar"></div>
+
+</div><!-- End demo -->
 
 
 
-
+<div class="demo-description" style="display: none; ">
+<p>Default determinate progress bar.</p>
+</div><!-- End demo-description -->
 </div>
 
-<script type="text/javascript">
-
-    $(document).ready(function(){
-        $( ".selector" ).tabs();
-    });
-
-    function function1(){
-       alert("sometext");
-    }
-
-    function function2(){
-        // your code here
-    }
-
-    function function3(){
-        // your code here
-    }
-</script>
