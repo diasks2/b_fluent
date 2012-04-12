@@ -6,10 +6,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @toeictests = @user.toeictests.paginate(page: params[:page], per_page: 5)
-    @casecs = @user.casecs.paginate(page: params[:page], per_page: 5)
-    @toeictest = current_user.toeictests.paginate(page: params[:page])
-    @casec = current_user.casecs.paginate(page: params[:page])
+    @toeictests = @user.toeictests.paginate(page: params[:toeictests_page], per_page: 5)
+    @casecs = @user.casecs.paginate(page: params[:casecs_page], per_page: 5)
+    @toeflis = @user.toeflis.paginate(page: params[:toeflis_page], per_page: 5)
   end
 
   def new

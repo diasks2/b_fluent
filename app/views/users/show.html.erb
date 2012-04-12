@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="container">
-<div class="center hero-unit">
+<div class="center kevin-unit">
 <div class="row">
   　<div class="span2">
   
@@ -11,105 +11,36 @@
     　　あなたが「BiFluent」をはじめてから<b><%= time_ago_in_words(
     @user.created_at) %></b>です。
   　</div>
-</br>
-</br>
-</br>
-</br>
-<div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div>
+</div>
+</div>
+</div>
 
-　　　　　<ul class="nav nav-tabs">
-　<li class="active"><a href="#home" data-toggle="tab" onclick="function1();"><i class="icon-home"></i> ホーム</a></li>
+
+<div class="center kevin-unit">
+　<ul class="nav nav-tabs">
+　<li class="active"><a href="#home" data-toggle="tab"><i class="icon-home"></i> ホーム</a></li>
 　<li><a href="#bifluent" data-toggle="tab"><i class="icon-leaf"></i> BiFluent</a></li>
   <li><a href="#toeic" data-toggle="tab">TOEIC®</a></li>
   <li><a href="#step" data-toggle="tab">STEP 英検</a></li>
-  <li><a href="#toefl" data-toggle="tab" onclick="function2();">TOEFL®</a></li>
+  <li><a href="#toefli" data-toggle="tab">TOEFL® iBT</a></li>
+  <li><a href="#toeflp" data-toggle="tab">TOEFL® pBT</a></li>
   <li><a href="#casec" data-toggle="tab">CASEC</a></li>
   <li><a href="#ielts" data-toggle="tab">IELTS</a></li>
 　　　　　</ul>
  
 　<div class="tab-content">
   　<div class="tab-pane active" id="home">TOEIC Tests (<%= @user.toeictests.count %>) CASEC Tests (<%= @user.casecs.count %>)
-
-<div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div>
   </div>
   　<div class="tab-pane" id="bifluent">BiFluent</div>
   　<div class="tab-pane" id="toeic"><%= render 'toeic_p' %></div>
- 　 <div class="tab-pane" id="step">Step
- <div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div></div>
- 　 <div class="tab-pane" id="toefl">
- <div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div>
- </div>
+ 　 <div class="tab-pane" id="step">Step</div>
+ 　 <div class="tab-pane" id="toefli"><%= render 'toefli_p' %></div>
+    <div class="tab-pane" id="toeflp"></div>
 　　<div class="tab-pane" id="casec"><%= render 'casec_p' %></div>
 　　<div class="tab-pane" id="ielts">ielts</div>
  </div>
 
-
 </div>
 
-</div>
-</div>
-
-<script type="text/javascript">
-
-     $(document).ready(function(){
-       $( ".selector" ).tabs({
-           show: function () {
-             chart.invalidateSize()
-           }
-        });
-    });
-
-    function function1(){
-        alert('triggered on show');
-    }
-   
-var chart;
-
-            var chartData = [{
-                country: "USA",
-                visits: 4025
-            }, {
-                country: "Poland",
-                visits: 328
-            }];
-
-        AmCharts.ready(function function2() {
-                // SERIAL CHART
-                chart = new AmCharts.AmSerialChart();
-                chart.dataProvider = chartData;
-                chart.categoryField = "country";
-                chart.startDuration = 1;
-
-                // AXES
-                // category
-                var categoryAxis = chart.categoryAxis;
-                categoryAxis.labelRotation = 90;
-                categoryAxis.gridPosition = "start";
-
-                // value
-                // in case you don"t want to change default settings of value axis,
-                // you don"t need to create it, as one value axis is created automatically.
-
-                // GRAPH
-                var graph = new AmCharts.AmGraph();
-                graph.valueField = "visits";
-                graph.balloonText = "[[category]]: [[value]]";
-                graph.type = "column";
-                graph.lineAlpha = 0;
-                graph.fillAlphas = 0.8;
-                chart.addGraph(graph);
-
-                chart.write("chartdiv");
-    });
- 
-    function function3(){
-        // your code here
-    }
-        
-        
 
 
-           
-
-
-</script>

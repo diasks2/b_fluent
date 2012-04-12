@@ -1,11 +1,11 @@
-<div id="casec_pages">
+<div id="casec_pages" class="score_pages">
 <% if @user.casecs.any? %>
 
 <h2>CASEC Tests (<%= @user.casecs.count %>)</h2>
-<%= will_paginate @casecs %>
+<%= will_paginate @casecs, :param_name => :casecs_page %>
 <ol class="casecs">
 <%= render @casecs %>
 </ol>
-<%= will_paginate @casecs %>
+<%= will_paginate @casecs, :param_name => :casecs_page %>
 <% end %>
 </div>

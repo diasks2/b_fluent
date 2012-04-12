@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ToeictestsController < ApplicationController
   before_filter :signed_in_user, only: [:new, :create, :destroy, :toeicjournal]
   before_filter :correct_user,   only: :destroy
@@ -18,7 +19,7 @@ end
   def create
     @toeictest = current_user.toeictests.build(params[:toeictest])
     if @toeictest.save
-      flash[:success] = "TOEIC test created!"
+      flash[:success] = "TOEIC® test created!"
       redirect_to root_path
     else
       render 'new'

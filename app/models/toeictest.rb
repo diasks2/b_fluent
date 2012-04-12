@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Toeictest < ActiveRecord::Base
   attr_accessible :l_score, :r_score, :t_date
   belongs_to :user

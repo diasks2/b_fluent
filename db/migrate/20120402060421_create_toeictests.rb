@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateToeictests < ActiveRecord::Migration
   def change
     create_table :toeictests do |t|

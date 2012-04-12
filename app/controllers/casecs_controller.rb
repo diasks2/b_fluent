@@ -1,7 +1,11 @@
+# -*- encoding : utf-8 -*-
 class CasecsController < ApplicationController
   before_filter :signed_in_user, only: [:new, :create, :destroy]
   before_filter :correct_user,   only: :destroy
 
+def casecjournal
+  @casec = current_user.casecs.paginate(page: params[:page]) if signed_in?
+end
 
 def new
   @casec = Casec.new

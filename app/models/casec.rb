@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Casec < ActiveRecord::Base
   attr_accessible :c_date, :c_four, :c_one, :c_three, :c_two
   belongs_to :user

@@ -14,7 +14,8 @@
                   <ul class="dropdown-menu">
                   <li><%= link_to 'TOEIC®', toeic_input_path %></li>
                   <li><%= link_to 'STEP 英検', '#' %></li>
-                  <li><%= link_to 'TOEFL®', '#' %></li>
+                  <li><%= link_to 'TOEFL® iBT', toefli_input_path %></li>
+                  <li><%= link_to 'TOEFL® pBT', '#' %></li>
                   <li><%= link_to 'CASEC', casec_input_path %></li>
                   <li><%= link_to 'IELTS', '#' %></li>
                   </ul>
@@ -24,8 +25,9 @@
               <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "BiFluent", root_path %></li>
               <li class="<%= 'active' if current_page?(toeic_journal_path) %>"><%= link_to "TOEIC®", toeic_journal_path %></li>
               <li ><%= link_to "STEP 英検", '#' %></li>
-              <li ><%= link_to "TOEFL®", '#' %></li>
-              <li ><%= link_to "CASEC", '#' %></li>
+              <li class="<%= 'active' if current_page?(toefli_journal_path) %>"><%= link_to "TOEFL® iBT", toefli_journal_path %></li>
+              <li ><%= link_to "TOEFL® pBT", '#' %></li>
+              <li class="<%= 'active' if current_page?(casec_journal_path) %>"><%= link_to "CASEC", casec_journal_path %></li>
               <li ><%= link_to "IELTS", '#' %></li>
             </ul>
           </div><!--/.well -->

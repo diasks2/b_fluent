@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateCasecs < ActiveRecord::Migration
   def change
     create_table :casecs do |t|

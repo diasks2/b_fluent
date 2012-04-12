@@ -1,4 +1,4 @@
-# encoding: UTF-8
+# -*- encoding : utf-8 -*-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120408143540) do
+ActiveRecord::Schema.define(:version => 20120412130723) do
 
   create_table "casecs", :force => true do |t|
     t.date     "c_date"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(:version => 20120408143540) do
   end
 
   add_index "casecs", ["user_id", "c_date"], :name => "index_casecs_on_user_id_and_c_date"
+
+  create_table "toeflis", :force => true do |t|
+    t.date     "toefli_date"
+    t.integer  "toefli_r"
+    t.integer  "toefli_w"
+    t.integer  "toefli_l"
+    t.integer  "toefli_s"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "toeflis", ["user_id", "toefli_date"], :name => "index_toeflis_on_user_id_and_toefli_date"
 
   create_table "toeictests", :force => true do |t|
     t.datetime "t_date"

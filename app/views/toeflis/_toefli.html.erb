@@ -1,0 +1,15 @@
+<div class="well">
+  <p><span class="total_score">TOEFL® iBT Total: <%= toefli.toefli_r + toefli.toefli_w + toefli.toefli_l + toefli.toefli_s %></span></p>
+  <p><span class="c_one">TOEFL® iBT Reading: <%= toefli.toefli_r %></span></p>
+  <p><span class="c_two">TOEFL® iBT Writing: <%= toefli.toefli_w %></span></p>
+  <p><span class="c_three">TOEFL® iBT Listening: <%= toefli.toefli_l %></span></p>
+  <p><span class="c_four">TOEFL® iBT Speaking: <%= toefli.toefli_s %></span></p>
+  <p><span class="timestamp">TOEFL® iBT Date: <%= toefli.toefli_date.to_s(:j_date) %></span></p>
+  </div>
+   <% if current_user?(toefli.user) %>
+    <%= link_to "delete", toefli, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   toefli.toefli_date %>
+  <% end %>
+
+

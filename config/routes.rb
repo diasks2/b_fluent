@@ -4,6 +4,7 @@ BFluent::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :toeictests, only: [:new, :create, :destroy]
   resources :casecs, only: [:new, :create, :destroy]
+  resources :toeflis, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
 
@@ -13,6 +14,9 @@ BFluent::Application.routes.draw do
   match '/toeic_input', to: 'toeictests#new'
   match '/toeic_journal', to: 'toeictests#toeicjournal'
   match '/casec_input', to: 'casecs#new'
+  match '/casec_journal', to: 'casecs#casecjournal'
+  match '/toefli_input', to: 'toeflis#new'
+  match '/toefli_journal', to: 'toeflis#toeflijournal'
 
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'

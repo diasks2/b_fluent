@@ -1,0 +1,11 @@
+<div id="toefli_pages" class="score_pages">
+<% if @user.toeflis.any? %>
+
+<h2>TOEFL® iBT Tests (<%= @user.toeflis.count %>)</h2>
+<%= will_paginate @toeflis, :param_name => :toeflis_page %>
+<ol class="toeflis">
+<%= render @toeflis %>
+</ol>
+<%= will_paginate @toeflis, :param_name => :toeflis_page %>
+<% end %>
+</div>
