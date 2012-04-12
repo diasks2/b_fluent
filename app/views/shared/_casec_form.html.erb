@@ -1,50 +1,47 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-<div class="row-fluid">
-<%= form_for(@casec) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="span4">
-<p><label for="date"><%=t :test_date %></label></p> 
-    <%= f.datepicker :c_date %>
-    </div>
-    </br>
-<div class="span8">
-    <p><label for="amount_one">CASEC Section 1:</label></p>
-    <div id="slider_one"></div>
-	<div id="amount_one" style="border: 0px solid #000000; color:#f6931f; font-weight:bold; background-color:transparent;" />200</div>
 
-</div>
-    </br>
-<div class="span8">
-<p><label for="amount_two">CASEC Section 2:</label></p>
-    <div id="slider_two"></div>
-    <div id="amount_two" style="border:0; color:#f6931f; font-weight:bold;" />200</div>
+<div class="container">
+	      <div class="row">
+              <div class="span3">
+        	    <div class="well">
+                <%= image_tag("BigB2.png", alt: "BiFluent 'B' logo") %>
+                </div>
+              </div>
+              <div class="span9">
+               <div class="well">
+               	 <h1>CASEC</h1>
+                 <%= form_for(@casec) do |f| %>
+                 <%= render 'shared/error_messages', object: f.object %>
+                 <div class="span3">
+                 <p><label for="date"><%=t :test_date %></label></p> 
+                 <%= f.datepicker :c_date %>
+                 </div>
+                 <div class="span5">
+                 <p><label for="amount_one">CASEC Section 1:</label></p>
+                 <div id="slider_one" class="slider"></div>
+	             <div id="amount_one" class="slider_num">200</div>
+	             <p><label for="amount_two">CASEC Section 2:</label></p>
+                 <div id="slider_two"></div>
+                 <div id="amount_two" class="slider_num" />200</div>
+                 <p><label for="amount_three">CASEC Section 3:</label></p>
+                 <div id="slider_three"></div>
+                 <div id="amount_three" class="slider_num" />200</div>
+                 <p><label for="amount_four">CASEC Section 4:</label></p>
+                 <div id="slider_four"></div>
+                 <div id="amount_four" class="slider_num" />200</div>
+             </div>
+                 <%= f.hidden_field :c_one %>
+                 <%= f.hidden_field :c_two %>
+                 <%= f.hidden_field :c_three %>
+                 <%= f.hidden_field :c_four %>
+                 <div class="center"><%= f.submit I18n.t(:input_casec), class: "btn btn-large btn-primary" %></div>
+                 <% end %>
+                </div>
+              </div> 
+           </div>
 </div>
 
-    </br>
-<div class="span8">
-<p><label for="amount_three">CASEC Section 3:</label></p>
-    <div id="slider_three"></div>
-    <div id="amount_three" style="border:0; color:#f6931f; font-weight:bold;" />200</div>
-</div>
-
-    </br>
-<div class="span8">
-<p><label for="amount_four">CASEC Section 4:</label></p>
-    <div id="slider_four"></div>
-    <div id="amount_four" style="border:0; color:#f6931f; font-weight:bold;" />200</div>
-</div>
-
-    </br>
- <div class="span12">
-    <%= f.hidden_field :c_one %>
-    <%= f.hidden_field :c_two %>
-    <%= f.hidden_field :c_three %>
-    <%= f.hidden_field :c_four %>
-    <%= f.submit I18n.t(:input_casec), class: "btn btn-large btn-primary" %>
-</div>
-<% end %>
-</div>
-	<script>
+<script>
 $(document).ready(function() {
 	$(function() {
 		$( "#slider_one" ).slider({
@@ -137,4 +134,4 @@ $(document).ready(function() {
 	$.datepicker.setDefaults($.datepicker.regional['ja']);
 	});
 });
-	</script>
+</script>
