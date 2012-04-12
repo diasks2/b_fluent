@@ -1,7 +1,10 @@
 class ToeictestsController < ApplicationController
-  before_filter :signed_in_user, only: [:new, :create, :destroy]
+  before_filter :signed_in_user, only: [:new, :create, :destroy, :toeicjournal]
   before_filter :correct_user,   only: :destroy
 
+def toeicjournal
+  @toeictest = current_user.toeictests.paginate(page: params[:page]) if signed_in?
+end
 
 def new
   @toeictest = Toeictest.new

@@ -11,6 +11,7 @@ BFluent::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/toeic_input', to: 'toeictests#new'
+  match '/toeic_journal', to: 'toeictests#toeicjournal'
   match '/casec_input', to: 'casecs#new'
 
   match '/about',   to: 'static_pages#about'

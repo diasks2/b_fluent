@@ -134,7 +134,6 @@ textarea {
   color: rgba(255, 255, 255, 0.75);
 }
 
-
 .btn-primary {
   background-color: #cc9000;
   background-image: -moz-linear-gradient(top, #e39f1c, #d28d07);
@@ -161,6 +160,32 @@ textarea {
   background-color: #004099 \9;
 }
 
+.btn-danger {
+ background-color: #0074cc;
+  background-image: -moz-linear-gradient(top, #0088cc, #0055cc);
+  background-image: -ms-linear-gradient(top, #0088cc, #0055cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0055cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0055cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0055cc);
+  background-image: linear-gradient(top, #0088cc, #0055cc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0055cc', GradientType=0);
+  border-color: #0055cc #0055cc #003580;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  margin: 5px 0;
+}
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger.active,
+.btn-danger.disabled,
+.btn-danger[disabled] {
+  background-color: #0055cc;
+}
+.btn-danger:active,
+.btn-danger.active {
+  background-color: #004099 \9;
+}
 
 /* typography */
 
