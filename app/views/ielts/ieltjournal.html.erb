@@ -1,4 +1,4 @@
-<% provide(:title, I18n.t(:casecjournal)) %>
+<% provide(:title, I18n.t(:ieltjournal)) %>
 <%= render '/shared/sidebar' %>
   <div class="span9">
       <div class="center kevin-unit">
@@ -11,17 +11,17 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @casec.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"c_one\"/, "c_one").gsub(/\"c_two\"/, "c_two").gsub(/\"c_three\"/, "c_three").gsub(/\"c_four\"/, "c_four").gsub(/\"c_date\"/, "c_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+    var chartData = <%= raw @ielt.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"ielt_score\"/, "ielt_score").gsub(/\"ielt_date\"/, "ielt_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART
                 chart = new AmCharts.AmSerialChart();
                 chart.dataProvider = chartData;
-                chart.categoryField = "c_date";
+                chart.categoryField = "ielt_date";
                 chart.columnWidth = 0.5 ;
 
                 // TITLE
-                chart.addTitle("CASEC Test Scores", 15);
+                chart.addTitle("IELTS Test Scores", 15);
 
                 // AXES
                 // category
@@ -38,15 +38,15 @@
                 valueAxis.stackType = "regular";
                 valueAxis.gridAlpha = 0.1;
                 valueAxis.axisAlpha = 0;
-                valueAxis.maximum = 1000
+                valueAxis.maximum = 9
                 chart.addValueAxis(valueAxis);
 
                 // GRAPHS
                 // CASEC Section 1    
                 var graph = new AmCharts.AmGraph();
-                graph.title = "CASEC Section 1";
+                graph.title = "IELTS Score";
                 graph.labelText = "[[value]]";
-                graph.valueField = "c_one";
+                graph.valueField = "ielt_score";
                 graph.type = "column";
                 graph.lineAlpha = 0;
                 graph.fillAlphas = 1;
@@ -54,46 +54,10 @@
                 graph.color = '#ffffff';
                 chart.addGraph(graph);
 
-                // CASEC Section 2             
-                graph = new AmCharts.AmGraph();
-                graph.title = "CASEC Section 2";
-                graph.labelText = "[[value]]";
-                graph.valueField = "c_two";
-                graph.type = "column";
-                graph.lineAlpha = 0;
-                graph.fillAlphas = 1;
-                graph.lineColor = "#a2d2d4";
-                graph.color = '#ffffff';
-                chart.addGraph(graph);
-
-                 // CASEC Section 3             
-                graph = new AmCharts.AmGraph();
-                graph.title = "CASEC Section 3";
-                graph.labelText = "[[value]]";
-                graph.valueField = "c_three";
-                graph.type = "column";
-                graph.lineAlpha = 0;
-                graph.fillAlphas = 1;
-                graph.lineColor = "#0a0a64";
-                graph.color = '#ffffff';
-                chart.addGraph(graph);
-
-                 // CASEC Section 4             
-                graph = new AmCharts.AmGraph();
-                graph.title = "CASEC Section 4";
-                graph.labelText = "[[value]]";
-                graph.valueField = "c_four";
-                graph.type = "column";
-                graph.lineAlpha = 0;
-                graph.fillAlphas = 1;
-                graph.lineColor = "#7a7aea";
-                graph.color = '#ffffff';
-                chart.addGraph(graph);
-
                  // HORIZONTAL GREEN RANGE
                 var guide = new AmCharts.Guide();
-                guide.value = 850;
-                guide.toValue = 950;
+                guide.value = 7;
+                guide.toValue = 8.5;
                 guide.fillColor = "#00CC00";
                 guide.inside = true;
                 guide.fillAlpha = 0.2;

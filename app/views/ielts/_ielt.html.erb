@@ -1,0 +1,9 @@
+ <div class="well">
+  <p><span class="ielt_score">IELTS Score: <%= ielt.ielt_score %></span></p>
+  <p><span class="timestamp">IELTS Date: <%= ielt.ielt_date.to_s(:j_date) %></span></p>
+  </div>
+   <% if current_user?(ielt.user) %>
+    <%= link_to "delete", ielt, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   ielt.ielt_date %>
+  <% end %>

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @toeictests = @user.toeictests.paginate(page: params[:toeictests_page], per_page: 5)
     @casecs = @user.casecs.paginate(page: params[:casecs_page], per_page: 5)
     @toeflis = @user.toeflis.paginate(page: params[:toeflis_page], per_page: 5)
+    @ielts = @user.ielts.paginate(page: params[:ielts_page], per_page: 5)
   end
 
   def new

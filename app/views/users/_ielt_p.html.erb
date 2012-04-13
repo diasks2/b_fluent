@@ -1,0 +1,11 @@
+<div id="ielt_pages" class="score_pages">
+<% if @user.ielts.any? %>
+
+<h2>IELTS Tests (<%= @user.ielts.count %>)</h2>
+<%= will_paginate @ielts, :param_name => :ielts_page %>
+<ol class="ielts">
+<%= render @ielts %>
+</ol>
+<%= will_paginate @ielts, :param_name => :ielts_page %>
+<% end %>
+</div>
