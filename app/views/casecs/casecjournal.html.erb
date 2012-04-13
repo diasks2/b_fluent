@@ -1,1 +1,112 @@
-casecjournal.html.erb
+<% provide(:title, I18n.t(:toeicjournal)) %>
+<%= render '/shared/sidebar' %>
+  <div class="span9">
+      <div class="center kevin-unit">
+          <div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div>
+      </div>
+  </div>
+</div><!--/.sidebar row -->
+</div><!--/.sidebar container -->
+
+<script type="text/javascript">
+            var chart;
+
+    var chartData = <%= raw @casec.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"c_one\"/, "c_one").gsub(/\"c_two\"/, "c_two").gsub(/\"c_three\"/, "c_three").gsub(/\"c_four\"/, "c_four").gsub(/\"c_date\"/, "c_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+                chart.dataProvider = chartData;
+                chart.categoryField = "c_date";
+                chart.columnWidth = 0.5 ;
+
+                // TITLE
+                chart.addTitle("CASEC Test Scores", 15);
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridAlpha = 0.1;
+                categoryAxis.axisAlpha = 0;
+                categoryAxis.gridPosition = "start";
+                categoryAxis.boldPeriodBeginning = "false";
+                categoryAxis.labelRotation = 65;
+
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.stackType = "regular";
+                valueAxis.gridAlpha = 0.1;
+                valueAxis.axisAlpha = 0;
+                valueAxis.maximum = 1000
+                chart.addValueAxis(valueAxis);
+
+                // GRAPHS
+                // CASEC Section 1    
+                var graph = new AmCharts.AmGraph();
+                graph.title = "CASEC Section 1";
+                graph.labelText = "[[value]]";
+                graph.valueField = "c_one";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#329898";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+                // CASEC Section 2             
+                graph = new AmCharts.AmGraph();
+                graph.title = "CASEC Section 2";
+                graph.labelText = "[[value]]";
+                graph.valueField = "c_two";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#a2d2d4";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+                 // CASEC Section 3             
+                graph = new AmCharts.AmGraph();
+                graph.title = "CASEC Section 3";
+                graph.labelText = "[[value]]";
+                graph.valueField = "c_three";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#0a0a64";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+                 // CASEC Section 4             
+                graph = new AmCharts.AmGraph();
+                graph.title = "CASEC Section 4";
+                graph.labelText = "[[value]]";
+                graph.valueField = "c_four";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#7a7aea";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+                 // HORIZONTAL GREEN RANGE
+                var guide = new AmCharts.Guide();
+                guide.value = 850;
+                guide.toValue = 950;
+                guide.fillColor = "#00CC00";
+                guide.inside = true;
+                guide.fillAlpha = 0.2;
+                guide.lineAlpha = 0;
+                valueAxis.addGuide(guide);
+
+                // LEGEND                  
+                var legend = new AmCharts.AmLegend();
+                chart.addLegend(legend);
+                legend.align = "center";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+
+</script>

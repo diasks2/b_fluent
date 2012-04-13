@@ -1,1 +1,113 @@
-toeflijournal.html.erb
+<% provide(:title, I18n.t(:toeicjournal)) %>
+<%= render '/shared/sidebar' %>
+  <div class="span9">
+      <div class="center kevin-unit">
+          <div id="chartdiv" style="width: 100%; height: 400px; background-color:white;"></div>
+      </div>
+  </div>
+</div><!--/.sidebar row -->
+</div><!--/.sidebar container -->
+
+<script type="text/javascript">
+            var chart;
+
+    var chartData = <%= raw @toefli.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"toefli_r\"/, "toefli_r").gsub(/\"toefli_w\"/, "toefli_w").gsub(/\"toefli_l\"/, "toefli_l").gsub(/\"toefli_s\"/, "toefli_s").gsub(/\"toefli_date\"/, "toefli_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+                chart.dataProvider = chartData;
+                chart.categoryField = "toefli_date";
+                chart.columnWidth = 0.5 ;
+
+                // TITLE
+                chart.addTitle("TOEIC® iBT Test Scores", 15);
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridAlpha = 0.1;
+                categoryAxis.axisAlpha = 0;
+                categoryAxis.gridPosition = "start";
+                categoryAxis.boldPeriodBeginning = "false";
+                categoryAxis.labelRotation = 65;
+
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.stackType = "regular";
+                valueAxis.gridAlpha = 0.1;
+                valueAxis.axisAlpha = 0;
+                valueAxis.maximum = 120
+                valueAxis.step = 10
+                chart.addValueAxis(valueAxis);
+
+                // GRAPHS
+                // TOEIC® iBT Reading    
+                var graph = new AmCharts.AmGraph();
+                graph.title = "TOEIC® iBT Reading";
+                graph.labelText = "[[value]]";
+                graph.valueField = "toefli_r";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#dd9f19";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+                // TOEIC® iBT Writing             
+                graph = new AmCharts.AmGraph();
+                graph.title = "CASEC Section 2";
+                graph.labelText = "[[value]]";
+                graph.valueField = "toefli_w";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#dd790d";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+                 // TOEIC® iBT Listening             
+                graph = new AmCharts.AmGraph();
+                graph.title = "CASEC Section 3";
+                graph.labelText = "[[value]]";
+                graph.valueField = "toefli_l";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#988570";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+                 // TOEIC® iBT Speaking             
+                graph = new AmCharts.AmGraph();
+                graph.title = "CASEC Section 4";
+                graph.labelText = "[[value]]";
+                graph.valueField = "toefli_s";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#f4d9bc";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+                 // HORIZONTAL GREEN RANGE
+                var guide = new AmCharts.Guide();
+                guide.value = 95;
+                guide.toValue = 115;
+                guide.fillColor = "#00CC00";
+                guide.inside = true;
+                guide.fillAlpha = 0.2;
+                guide.lineAlpha = 0;
+                valueAxis.addGuide(guide);
+
+                // LEGEND                  
+                var legend = new AmCharts.AmLegend();
+                chart.addLegend(legend);
+                legend.align = "center";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+
+</script>

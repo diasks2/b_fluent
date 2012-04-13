@@ -43,86 +43,69 @@
 </div>
 <% end %> 
 
-
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @toeictest.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"l_score\"/, "l_score").gsub(/\"r_score\"/, "r_score").gsub(/\"t_date\"/, "t_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+            var chartData = [{
+                skill: "Sentence Structure",
+                score: 5
+            }, {
+                skill: "Grammar",
+                score: 4
+            }, {
+                skill: "Pronunciation",
+                score: 6
+            }, {
+                skill: "Vocabulary",
+                score: 4.5
+            }, {
+                skill: "Listening",
+                score: 7.2
+            }, {
+                skill: "Accuracy",
+                score: 6.1
+            }, {
+            skill: "Quick Reponse",
+                score: 9.1
+            }, {
+            skill: "Fluency",
+                score: 4.6
+            }];
 
             AmCharts.ready(function () {
-                // SERIAL CHART
-                chart = new AmCharts.AmSerialChart();
+                // RADAR CHART
+                chart = new AmCharts.AmRadarChart();
                 chart.dataProvider = chartData;
-                chart.categoryField = "t_date";
-                chart.columnWidth = 0.5 ;
+                chart.categoryField = "skill";
+                chart.startDuration = 1;
 
-                // AXES
-                // category
-                var categoryAxis = chart.categoryAxis;
-                categoryAxis.gridAlpha = 0.1;
-                categoryAxis.axisAlpha = 0;
-                categoryAxis.gridPosition = "start";
-                categoryAxis.boldPeriodBeginning = "false";
-                categoryAxis.labelRotation = 65;
+                // TITLE
+                chart.addTitle("My BiFluent", 15);
 
-
-                // value
+                // VALUE AXIS
                 var valueAxis = new AmCharts.ValueAxis();
-                valueAxis.stackType = "regular";
-                valueAxis.gridAlpha = 0.1;
-                valueAxis.axisAlpha = 0;
-                valueAxis.maximum = 990
+                valueAxis.fillAlpha = 0.05;
+                valueAxis.axisAlpha = 0.15;
+                valueAxis.fillColor = "#000000";
+                valueAxis.dashLength = 3;
+                valueAxis.minimum = 0;
+                valueAxis.gridCount = 5;
                 chart.addValueAxis(valueAxis);
 
-                // GRAPHS
-                // TOEIC Reading    
+                // GRAPH
                 var graph = new AmCharts.AmGraph();
-                graph.title = "TOEIC®<%=t :tr_score %>";
-                graph.labelText = "[[value]]";
-                graph.valueField = "r_score";
-                graph.type = "column";
-                graph.lineAlpha = 0;
-                graph.fillAlphas = 1;
-                graph.lineColor = "#4265a6";
-                graph.color = '#ffffff';
+                graph.fillAlphas = 0.4;
+                graph.fillColor = "#7fc837";
+                graph.valueField = "score";
+                graph.bullet = "round";
+                graph.balloonText = "BiFluent Score: [[value]]"
                 chart.addGraph(graph);
-
-
-                // TOEIC Listening             
-                graph = new AmCharts.AmGraph();
-                graph.title = "TOEIC®<%=t :tl_score %>";
-                graph.labelText = "[[value]]";
-                graph.valueField = "l_score";
-                graph.type = "column";
-                graph.lineAlpha = 0;
-                graph.fillAlphas = 1;
-                graph.lineColor = "#91a6cc";
-                graph.color = '#ffffff';
-                chart.addGraph(graph);
-
-                 // HORIZONTAL GREEN RANGE
-                var guide = new AmCharts.Guide();
-                guide.value = 670;
-                guide.toValue = 800;
-                guide.fillColor = "#00CC00";
-                guide.inside = true;
-                guide.fillAlpha = 0.2;
-                guide.lineAlpha = 0;
-                valueAxis.addGuide(guide);
-
-                // LEGEND                  
-                var legend = new AmCharts.AmLegend();
-                chart.addLegend(legend);
-                legend.align = "center";
 
                 // WRITE
                 chart.write("chartdiv");
             });
-
-</script>
-
-  <script type="text/javascript" src="/assets/modal-video.js"></script>
-        
+        </script>
+       
   <script charset="utf-8" type="text/javascript">
     $(function() {
         $('.video-play').click(function() {        
