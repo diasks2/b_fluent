@@ -5,9 +5,9 @@
   <p><span class="timestamp"><%=t :toeic_date %>: <%= toeictest.t_date.to_s(:j_date) %></span></p>
 </div>
    <% if current_user?(toeictest.user) %>
-    <%= link_to "delete", toeictest, method:  :delete,
-                                     confirm: "You sure?",
-                                     title:   toeictest.t_date %>
+    
+<%= link_to content_tag('i', '', class: 'icon-trash'), toeictest, confirm: "Are you sure you want to delete?", method: :delete %>
+
   <% end %>
 
 
