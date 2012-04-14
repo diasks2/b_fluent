@@ -30,7 +30,7 @@ $korange: #faa71a;
 } 
 
 body {
-  background: $background-color;
+  background: $background-color url('/assets/BiFluentBackground.png') no-repeat top center;
 }
 section {
   overflow: auto;
