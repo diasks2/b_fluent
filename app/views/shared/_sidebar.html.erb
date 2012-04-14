@@ -7,7 +7,7 @@
                   <%= link_to "BiFluentのテスト", "#", class: "btn btn-danger" %>
                   </br>
                   <div class="btn-group"> 
-                  <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
+                  <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#" rel="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">
                   スコアを入れて
                   <span class="caret"></span>
                   </a>
@@ -22,7 +22,7 @@
                   </div>
                   </div>
               <li class="nav-header">勉強手帳</li>
-              <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "BiFluent", root_path %></li>
+              <li class="<%= 'active' if current_page?(root_path) %>" rel="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?"><%= link_to "BiFluent", root_path %></li>
               <li class="<%= 'active' if current_page?(toeic_journal_path) %>"><%= link_to "TOEIC®", toeic_journal_path %></li>
               <li ><%= link_to "STEP 英検", '#' %></li>
               <li class="<%= 'active' if current_page?(toefli_journal_path) %>"><%= link_to "TOEFL® iBT", toefli_journal_path %></li>
@@ -32,3 +32,15 @@
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
+
+<script>
+        $(document).ready(function() {
+    $("a[rel=popover]")
+        .popover({
+            offset: 10
+        })
+        .click(function(e) {
+            e.preventDefault()
+        })
+});
+</script>
