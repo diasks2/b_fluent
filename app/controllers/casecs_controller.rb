@@ -28,7 +28,7 @@ end
 
   def destroy
     @casec.destroy
-    redirect_back_or root_path
+    redirect_back_or current_user
   end
 
   private
