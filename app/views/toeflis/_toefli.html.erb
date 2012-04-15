@@ -4,12 +4,16 @@
   <p><span class="c_two">TOEFL® iBT Writing: <%= toefli.toefli_w %></span></p>
   <p><span class="c_three">TOEFL® iBT Listening: <%= toefli.toefli_l %></span></p>
   <p><span class="c_four">TOEFL® iBT Speaking: <%= toefli.toefli_s %></span></p>
-  <p><span class="timestamp">TOEFL® iBT Date: <%= toefli.toefli_date.to_s(:j_date) %></span></p>
-  </div>
-   <% if current_user?(toefli.user) %>
-    <%= link_to "delete", toefli, method:  :delete,
+  <div id="textbox">
+  <p class="alignleft"><span class="timestamp">TOEFL® iBT Date: <%= toefli.toefli_date.to_s(:j_date) %></span></p>
+  
+   <p class="alignright"><% if current_user?(toefli.user) %>
+    <%= link_to content_tag('i', '', class: 'icon-trash'), toefli, method:  :delete,
                                      confirm: "You sure?",
                                      title:   toefli.toefli_date %>
   <% end %>
+  <div style="clear: both;"></div>
+</div>
+</div>
 
 

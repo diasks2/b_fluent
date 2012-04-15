@@ -4,10 +4,13 @@
   <p><span class="c_two">CASEC Section 2: <%= casec.c_two %></span></p>
   <p><span class="c_three">CASEC Section 3: <%= casec.c_three %></span></p>
   <p><span class="c_four">CASEC Section 4: <%= casec.c_four %></span></p>
-  <p><span class="timestamp">CASEC Date: <%= casec.c_date.to_s(:j_date) %></span></p>
-  </div>
-   <% if current_user?(casec.user) %>
-    <%= link_to "delete", casec, method:  :delete,
+  <div id="textbox">
+  <p class="alignleft"><span class="timestamp">CASEC Date: <%= casec.c_date.to_s(:j_date) %></span></p>
+  <p class="alignright"><% if current_user?(casec.user) %>
+    <%= link_to content_tag('i', '', class: 'icon-trash'), casec, method:  :delete,
                                      confirm: "You sure?",
                                      title:   casec.c_date %>
   <% end %>
+<div style="clear: both;"></div>
+</div>
+</div>

@@ -2,13 +2,14 @@
   <p><span class="total_score"><%=t :ttotal_score %>: <%= toeictest.r_score + toeictest.l_score %></span></p>
   <p><span class="l_score"><%=t :tl_score %>: <%= toeictest.l_score %></span></p>
   <p><span class="r_score"><%=t :tr_score %>: <%= toeictest.r_score %></span></p>
-  <p><span class="timestamp"><%=t :toeic_date %>: <%= toeictest.t_date.to_s(:j_date) %></span></p>
+   <div id="textbox">
+  <p class="alignleft"><span class="timestamp"><%=t :toeic_date %>: <%= toeictest.t_date.to_s(:j_date) %></span></p>
+   <p class="alignright"><% if current_user?(toeictest.user) %>
+    <%= link_to content_tag('i', '', class: 'icon-trash'), toeictest, confirm: "Are you sure you want to delete?", method: :delete %>
+  <% end %></p>
+  <div style="clear: both;"></div>
 </div>
-   <% if current_user?(toeictest.user) %>
-    
-<%= link_to content_tag('i', '', class: 'icon-trash'), toeictest, confirm: "Are you sure you want to delete?", method: :delete %>
-
-  <% end %>
+</div>
 
 
 
