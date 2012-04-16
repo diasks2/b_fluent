@@ -12,6 +12,6 @@ module ApplicationHelper
   end
 
   def logo
-    image_tag("logo.png", alt: "BiFluent", class: "round")
+    image_tag("NavBarLogo.png", alt: "BiFluent", class: "round")
   end
 end

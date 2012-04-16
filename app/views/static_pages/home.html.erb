@@ -10,28 +10,41 @@
 <% else %>
 
 <div class="center kevin-unit">
+ <div class="row">
 
- <h1>あなたの英語のレベルを知っていますか？</h1>
- <a href="#" data-controls-modal="modal-from-dom" data-backdrop="true" class="video-play">play</a>
- <br/>
- <br/>
+<div class="span9">
+      <%= image_tag("HomePage_Logo.png", alt: "BiFluent") %>
+</div>
+      <div class="span2">
+          <%= image_tag("B_Video.png", alt: "BiFluent Video", :class => "video-play", :mouseover => "B2_Video.png") %>
+           <div>
+           <a href="#" data-controls-modal="modal-from-dom" data-backdrop="true" class="video-play">ビデオを見る</a>
+           </div>
+      </div>
+   </div>
 
-<%= link_to I18n.t(:free_trial), signup_path, class: "btn btn-large btn-primary" %>
-
-<br/>
+   <div class="signup_title">
+      <%= image_tag("home_level.png", alt: "あなたの英語のレベルを知っていますか？") %>
+      <div class="main_button">
+      <%= link_to I18n.t(:free_trial), signup_path, class: "btn btn-large btn-primary" %>
+      </div>
+   </div>
 
    <title>BiFluent</title>
     
         <div id="myCarousel" class="carousel slide">
             <div class="carousel-inner">
                 <div class="item active">
-                   <%= image_tag("Left.png", alt: "Step 1") %>
+                   <div class"kev"><%= image_tag("BiFluent_Home_1.png", alt: "BiFluent: 自分の英語試験の
+スコアを入れて") %></div>
                 </div>
                 <div class="item">
-                    <%= image_tag("Middle.png", alt: "Step 2") %>
+                    <div class"kev"><%= image_tag("BiFluent_Home_2.png", alt: "BiFluent: 月毎にBiFluentの
+チェックテストを受けて") %></div>
                 </div>
                 <div class="item">
-                  <%= image_tag("Right.png", alt: "Step 3") %>
+                  <div class"kev"><%= image_tag("BiFluent_Home_3.png", alt: "BiFluent: 簡単で見やすい勉強史
+と上達を確認できます。") %></div>
                 </div>
             </div>
             <!-- Carousel nav -->
@@ -51,7 +64,7 @@
                 score: 5
             }, {
                 skill: "Grammar",
-                score: 4
+                score: 3.2
             }, {
                 skill: "Pronunciation",
                 score: 6
@@ -66,10 +79,10 @@
                 score: 6.1
             }, {
             skill: "Quick Reponse",
-                score: 9.1
+                score: 8.1
             }, {
             skill: "Fluency",
-                score: 4.6
+                score: 6.6
             }];
 
             AmCharts.ready(function () {

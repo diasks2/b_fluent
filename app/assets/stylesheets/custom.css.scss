@@ -50,7 +50,7 @@ textarea {
 }
 
 .kevin-unit {
-  padding: 60px;
+  padding: 30px;
   margin-bottom: 30px;
   background-color: #eeeeee;
   -webkit-border-radius: 6px;
@@ -100,6 +100,30 @@ width: 200px;
 .carousel-caption p {
   color: #ffffff;
    font-size: 30px;
+}
+
+img { max-width: 100%; }
+
+.logo_header {
+ position:relative;
+}
+.homep_video {
+ float:right;
+}
+.signup_title {
+ clear:both;
+ margin-top: 15px;
+ margin-bottom: 15px;
+}
+
+.main_button {
+ margin-top: 15px;
+}
+
+.kev {
+  display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 
 .navbar .nav > li {
@@ -152,14 +176,14 @@ width: 200px;
 
 .btn-primary {
   background-color: #cc9000;
-  background-image: -moz-linear-gradient(top, #e39f1c, #d28d07);
-  background-image: -ms-linear-gradient(top, #e39f1c, #d28d07);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e39f1c), to(#d28d07));
-  background-image: -webkit-linear-gradient(top, #e39f1c, #d28d07);
-  background-image: -o-linear-gradient(top, #e39f1c, #d28d07);
-  background-image: linear-gradient(top, #e39f1c, #d28d07);
+  background-image: -moz-linear-gradient(top, #f0ad1d, #d28d07);
+  background-image: -ms-linear-gradient(top, #f0ad1d, #d28d07);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f0ad1d), to(#d28d07));
+  background-image: -webkit-linear-gradient(top, #f0ad1d, #d28d07);
+  background-image: -o-linear-gradient(top, #f0ad1d, #d28d07);
+  background-image: linear-gradient(top, #f0ad1d, #d28d07);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e39f1c', endColorstr='#d28d07', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0ad1d', endColorstr='#d28d07', GradientType=0);
   border-color: #d28d07 #d28d07 #003580;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:dximagetransform.microsoft.gradient(enabled=false);
@@ -174,6 +198,15 @@ width: 200px;
 .btn-primary:active,
 .btn-primary.active {
   background-color: #004099 \9;
+}
+
+.btn-large {
+  padding: 15px 20px;
+  font-size: 21px;
+  line-height: normal;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .btn-danger {
