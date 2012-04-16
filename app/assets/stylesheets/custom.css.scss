@@ -59,6 +59,7 @@ textarea {
   border-radius: 6px;
 }
 .kevin-unit h1 {
+  margin-top: 15px;
   margin-bottom: 0;
   font-size: 40px;
   line-height: 1;
@@ -119,6 +120,10 @@ img { max-width: 100%; }
 
 .main_button {
  margin-top: 15px;
+}
+
+.pricing_button {
+ margin-top: 15px
 }
 
 .kev {
@@ -263,8 +268,8 @@ h2 {
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
-  font-weight: normal;
-  color: $grayLight;
+  font-weight: bold;
+  color: #5f3720;
 }
 
 h3 {
