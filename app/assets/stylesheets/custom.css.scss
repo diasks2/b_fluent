@@ -291,6 +291,7 @@ p {
 footer {
   margin-top: 45px;
   margin-left: 10px;
+  margin-right: 10px;
   padding-top: 5px;
   border-top: 1px solid $white;
   color: $white;
@@ -310,7 +311,6 @@ footer {
     li {
       float: left;
       margin-left: 10px;
-      margin-right: 10px;
     }
   }
 }
