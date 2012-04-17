@@ -15,9 +15,10 @@
                   <li><%= link_to 'TOEIC®', toeic_input_path %></li>
                   <li><%= link_to 'STEP 英検', '#' %></li>
                   <li><%= link_to 'TOEFL® iBT', toefli_input_path %></li>
-                  <li><%= link_to 'TOEFL® pBT', '#' %></li>
                   <li><%= link_to 'CASEC', casec_input_path %></li>
                   <li><%= link_to 'IELTS', ielt_input_path %></li>
+                  <li><%= link_to 'TOEIC® Bridge', bridge_input_path %></li>
+                  <li><%= link_to 'TOEIC® SW', '#' %></li>
                   </ul>
                   </div>
                   </div>
@@ -26,9 +27,10 @@
               <li class="<%= 'active' if current_page?(toeic_journal_path) %>"><%= link_to "TOEIC®", toeic_journal_path %></li>
               <li ><%= link_to "STEP 英検", '#' %></li>
               <li class="<%= 'active' if current_page?(toefli_journal_path) %>"><%= link_to "TOEFL® iBT", toefli_journal_path %></li>
-              <li ><%= link_to "TOEFL® pBT", '#' %></li>
               <li class="<%= 'active' if current_page?(casec_journal_path) %>"><%= link_to "CASEC", casec_journal_path %></li>
               <li class="<%= 'active' if current_page?(ielt_journal_path) %>"><%= link_to "IELTS", ielt_journal_path %></li>
+              <li class="<%= 'active' if current_page?(bridge_journal_path) %>"><%= link_to "TOEIC® Bridge", bridge_journal_path %></li>
+              <li ><%= link_to "TOEIC® SW", '#' %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

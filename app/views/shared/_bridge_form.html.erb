@@ -1,0 +1,95 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<div class="container">
+	      <div class="row">
+              <div class="span3">
+        	    <div class="well">
+                <%= image_tag("BigB2.png", alt: "BiFluent 'B' logo") %>
+                </div>
+              </div>
+              <div class="span9">
+               <div class="well">
+               	 <h1>TOEIC® Bridge</h1>
+                 <%= form_for(@bridge) do |f| %>
+                 <%= render 'shared/error_messages', object: f.object %>
+                 <div class="span3">
+                 <p><label for="date"><%=t :test_date %></label></p> 
+                 <%= f.datepicker :bridge_date %>
+                 </div>
+                 <div class="span5">
+                 <p><label for="amount_bone">OEIC®のリスニングスコア (5点の刻み値):</label></p>
+                 <div id="slider_bone" class="slider"></div>
+	             <div id="amount_bone" class="slider_num">60</div>
+	             <p><label for="amount_btwo">TOEIC® Bridgeのリーディングスコア (5点の刻み値):</label></p>
+                 <div id="slider_btwo"></div>
+                 <div id="amount_btwo" class="slider_num" />60</div>
+             </div>
+                 <%= f.hidden_field :bridge_l %>
+                 <%= f.hidden_field :bridge_r %>
+                 <div class="center"><%= f.submit I18n.t(:input_bridge), class: "btn btn-large btn-primary" %></div>
+                 <% end %>
+                </div>
+              </div> 
+           </div>
+</div>
+
+<script>
+$(document).ready(function() {
+	$(function() {
+		$( "#slider_bone" ).slider({
+			value: 60,
+			min: 10,
+			max: 90,
+			step: 2,
+			slide: function( event, ui ) {
+				$( "#amount_bone" ).html( ui.value );
+			},
+
+			change: function(event, ui) {
+            $('input#bridge_bridge_l').val(ui.value);
+            }
+		});
+		$( "#amount_bone" ).val( $( "#slider_bone" ).slider( "value" ) );
+	});
+
+	$(function() {
+		$( "#slider_btwo" ).slider({
+			value: 60,
+			min: 10,
+			max: 90,
+			step: 2,
+			slide: function( event, ui ) {
+				$( "#amount_btwo" ).html( ui.value );
+			},
+
+			change: function(event, ui) {
+            $('input#bridge_bridge_r').val(ui.value);
+            }
+		});
+		$( "#amount_btwo" ).val( $( "#slider_btwo" ).slider( "value" ) );
+	});
+
+	$(function() {
+		$( "#datepicker" ).datepicker();
+		$.datepicker.regional['ja'] = {
+		closeText: '閉じる',
+		prevText: '&#x3c;前',
+		nextText: '次&#x3e;',
+		currentText: '今日',
+		monthNames: ['1月','2月','3月','4月','5月','6月',
+		'7月','8月','9月','10月','11月','12月'],
+		monthNamesShort: ['1月','2月','3月','4月','5月','6月',
+		'7月','8月','9月','10月','11月','12月'],
+		dayNames: ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
+		dayNamesShort: ['日','月','火','水','木','金','土'],
+		dayNamesMin: ['日','月','火','水','木','金','土'],
+		weekHeader: '週',
+		dateFormat: 'yy/mm/dd',
+		firstDay: 0,
+		isRTL: false,
+		showMonthAfterYear: true,
+		yearSuffix: '年'};
+	$.datepicker.setDefaults($.datepicker.regional['ja']);
+	});
+});
+</script>

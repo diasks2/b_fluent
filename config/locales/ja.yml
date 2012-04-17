@@ -22,6 +22,7 @@ ja:
   input_casec: CASECスコアを保存
   input_toefli: TOEFL® iBTスコアを保存
   input_ielt: IELTSスコアを保存
+  input_bridge: TOEIC® Bridgeスコアを保存
   tl_score: リスニングスコア
   tr_score: リーディングスコア
   toeic_date: TOEIC®テストの年月日
@@ -31,6 +32,7 @@ ja:
   casecjournal: CASECの勉強手帳
   toeflijournal: TOEFL® iBTの勉強手帳
   ieltjournal: IELTSの勉強手帳
+  bridgejournal: TOEIC® Bridgeの勉強手帳
   invalidemail: メールアドレスと、パスワードの組み合わせがまちがっているりょうです。
   account: アカウント
   settings: アカウント情報

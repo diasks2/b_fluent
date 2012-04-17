@@ -1,4 +1,4 @@
-<% provide(:title, I18n.t(:toeicjournal)) %>
+<% provide(:title, I18n.t(:bridgejournal)) %>
 <%= render '/shared/sidebar' %>
   <div class="span9">
       <div class="center kevin-unit">
@@ -11,17 +11,17 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @toeictest.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"l_score\"/, "l_score").gsub(/\"r_score\"/, "r_score").gsub(/\"t_date\"/, "t_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+    var chartData = <%= raw @bridge.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"bridge_l\"/, "bridge_l").gsub(/\"bridge_r\"/, "bridge_r").gsub(/\"bridge_date\"/, "bridge_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART
                 chart = new AmCharts.AmSerialChart();
                 chart.dataProvider = chartData;
-                chart.categoryField = "t_date";
+                chart.categoryField = "bridge_date";
                 chart.columnWidth = 0.5 ;
 
                 // TITLE
-                chart.addTitle("TOEIC® Test Scores", 15);
+                chart.addTitle("TOEIC® Bridge Test Scores", 15);
 
                 // AXES
                 // category
@@ -38,15 +38,15 @@
                 valueAxis.stackType = "regular";
                 valueAxis.gridAlpha = 0.1;
                 valueAxis.axisAlpha = 0;
-                valueAxis.maximum = 990
+                valueAxis.maximum = 180
                 chart.addValueAxis(valueAxis);
 
                 // GRAPHS
-                // TOEIC® Reading    
+                // TOEIC® Bridge Reading    
                 var graph = new AmCharts.AmGraph();
-                graph.title = "TOEIC®<%=t :tr_score %>";
+                graph.title = "TOEIC® Bridge<%=t :tr_score %>";
                 graph.labelText = "[[value]]";
-                graph.valueField = "r_score";
+                graph.valueField = "bridge_r";
                 graph.type = "column";
                 graph.lineAlpha = 0;
                 graph.fillAlphas = 1;
@@ -55,11 +55,11 @@
                 chart.addGraph(graph);
 
 
-                // TOEIC® Listening             
+                // TOEIC® Bridge Listening             
                 graph = new AmCharts.AmGraph();
-                graph.title = "TOEIC®<%=t :tl_score %>";
+                graph.title = "TOEIC® Bridge<%=t :tl_score %>";
                 graph.labelText = "[[value]]";
-                graph.valueField = "l_score";
+                graph.valueField = "bridge_l";
                 graph.type = "column";
                 graph.lineAlpha = 0;
                 graph.fillAlphas = 1;
@@ -69,8 +69,8 @@
 
                  // HORIZONTAL GREEN RANGE
                 var guide = new AmCharts.Guide();
-                guide.value = 670;
-                guide.toValue = 800;
+                guide.value = 165;
+                guide.toValue = 175;
                 guide.fillColor = "#00CC00";
                 guide.inside = true;
                 guide.fillAlpha = 0.2;

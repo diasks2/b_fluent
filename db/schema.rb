@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120413130315) do
+ActiveRecord::Schema.define(:version => 20120417134149) do
+
+  create_table "bridges", :force => true do |t|
+    t.integer  "bridge_l"
+    t.integer  "bridge_r"
+    t.date     "bridge_date"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "bridges", ["user_id", "bridge_date"], :name => "index_bridges_on_user_id_and_bridge_date"
 
   create_table "casecs", :force => true do |t|
     t.date     "c_date"
@@ -63,11 +74,13 @@ ActiveRecord::Schema.define(:version => 20120413130315) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "admin",           :default => false
+    t.boolean  "admin",                  :default => false
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

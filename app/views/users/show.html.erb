@@ -15,18 +15,18 @@
 </div>
 </div>
 
-
 <div class="center kevin-unit">
 　<ul class="nav nav-tabs">
-　<li class="active"><a href="#home" data-toggle="tab"><i class="icon-home"></i> ホーム</a></li>
-　<li><a href="#bifluent" data-toggle="tab"><i class="icon-leaf"></i> BiFluent</a></li>
-  <li><a href="#toeic" data-toggle="tab">TOEIC®</a></li>
-  <li><a href="#step" data-toggle="tab">STEP 英検</a></li>
-  <li><a href="#toefli" data-toggle="tab">TOEFL® iBT</a></li>
-  <li><a href="#toeflp" data-toggle="tab">TOEFL® pBT</a></li>
-  <li><a href="#casec" data-toggle="tab">CASEC</a></li>
-  <li><a href="#ielts" data-toggle="tab">IELTS</a></li>
-　　　　　</ul>
+　    <li class="active"><a href="#home" data-toggle="tab"><i class="icon-home"></i> ホーム</a></li>
+　    <li><a href="#bifluent" data-toggle="tab"><i class="icon-leaf"></i> BiFluent</a></li>
+      <li><a href="#toeic" data-toggle="tab">TOEIC®</a></li>
+      <li><a href="#step" data-toggle="tab">STEP 英検</a></li>
+      <li><a href="#toefli" data-toggle="tab">TOEFL® iBT</a></li>
+      <li><a href="#casec" data-toggle="tab">CASEC</a></li>
+      <li><a href="#ielts" data-toggle="tab">IELTS</a></li>
+      <li><a href="#toeicb" data-toggle="tab">TOEIC® Bridge</a></li>
+      <li><a href="#toeicsw" data-toggle="tab">TOEIC® SW</a></li>
+　　　　 </ul>
  
 　<div class="tab-content">
   　<div class="tab-pane active" id="home">TOEIC Tests (<%= @user.toeictests.count %>) CASEC Tests (<%= @user.casecs.count %>)
@@ -35,12 +35,9 @@
   　<div class="tab-pane" id="toeic"><%= render 'toeic_p' %></div>
  　 <div class="tab-pane" id="step">Step</div>
  　 <div class="tab-pane" id="toefli"><%= render 'toefli_p' %></div>
-    <div class="tab-pane" id="toeflp"></div>
 　　<div class="tab-pane" id="casec"><%= render 'casec_p' %></div>
 　　<div class="tab-pane" id="ielts"><%= render 'ielt_p' %></div>
+    <div class="tab-pane" id="toeicb"><%= render 'bridge_p' %></div>
+    <div class="tab-pane" id="toeicsw"></div>
  </div>
-
 </div>
-
-
-

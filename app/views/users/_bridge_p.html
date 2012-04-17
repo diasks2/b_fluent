@@ -1,0 +1,11 @@
+<div id="bridge_pages" class="score_pages">
+<% if @user.bridges.any? %>
+
+<h2>TOEIC® Bridge Tests (<%= @user.bridges.count %>)</h2>
+<%= will_paginate @bridges, :param_name => :bridges_page %>
+<ol class="bridges">
+<%= render @bridges %>
+</ol>
+<%= will_paginate @bridges, :param_name => :bridges_page %>
+<% end %>
+</div>

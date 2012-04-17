@@ -1,0 +1,11 @@
+<div class="well">
+  <p><span class="bridge_l"><%=t :bridge_l %>: <%= bridge.bridge_l %></span></p>
+  <p><span class="bridge_r"><%=t :bridge_r %>: <%= bridge.bridge_r %></span></p>
+   <div id="textbox">
+  <p class="alignleft"><span class="timestamp"><%=t :bridge_date %>: <%= bridge.bridge_date.to_s(:j_date) %></span></p>
+   <p class="alignright"><% if current_user?(bridge.user) %>
+    <%= link_to content_tag('i', '', class: 'icon-trash'), bridge, confirm: "Are you sure you want to delete?", method: :delete %>
+  <% end %></p>
+  <div style="clear: both;"></div>
+</div>
+</div>
