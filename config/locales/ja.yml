@@ -25,6 +25,12 @@ ja:
   input_bridge: TOEIC® Bridgeスコアを保存
   tl_score: リスニングスコア
   tr_score: リーディングスコア
+  xbridge_r: TOEIC® Bridgeのリーディングスコア
+  xbridge_l: TOEIC® Bridgeのリスニングスコア
+  xc_one: CASEC セクション1のスコア
+  xc_two: CASEC セクション2のスコア
+  xc_three: CASEC セクション3のスコア
+  xc_four: CASEC セクション4のスコア
   toeic_date: TOEIC®テストの年月日
   ttotal_score: TOEIC®スコア
   test_date: 試験日
