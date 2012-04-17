@@ -54,6 +54,21 @@ ja:
         bridge_date: TOEIC® Bridgeテストの年月日
         bridge_r: TOEIC® Bridgeのリーディングスコア
         bridge_l: TOEIC® Bridgeのリスニングスコア
+      ielt:
+        ielt_date: IELTSテストの年月日
+        ielt_score: IELTSのスコア
+      casec:
+        c_date: CASECテストの年月日
+        c_one: CASEC セクション1のスコア
+        c_two: CASEC セクション2のスコア
+        c_three: CASEC セクション3のスコア
+        c_four: CASEC セクション4のスコア
+      toefli:  
+        toefli_r: TOEFL® iBTのリーディングスコア
+        toefli_w:　TOEFL® iBTのライティングスコア
+        toefli_l:　TOEFL® iBTのリスニングスコア
+        toefli_s:　TOEFL® iBTのスピーキングスコア
+        toefli_date:　TOEFL® iBTのテストの年月日
   date:
     abbr_day_names:
     - 日
