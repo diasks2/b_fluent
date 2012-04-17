@@ -50,6 +50,10 @@ ja:
         t_date: TOEIC®テストの年月日
         l_score: TOEIC®のリスニングスコア
         r_score: TOEIC®のリーディングスコア
+      bridge:
+        bridge_date: TOEIC® Bridgeテストの年月日
+        bridge_r: TOEIC® Bridgeのリーディングスコア
+        bridge_l: TOEIC® Bridgeのリスニングスコア
   date:
     abbr_day_names:
     - 日
