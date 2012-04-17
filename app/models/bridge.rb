@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Bridge < ActiveRecord::Base
   attr_accessible :bridge_date, :bridge_l, :bridge_r
   belongs_to :user

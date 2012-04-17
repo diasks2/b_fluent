@@ -1,4 +1,4 @@
-<% provide(:title, I18n.t(:ieltjournal)) %>
+<% provide(:title, I18n.t(:toeicswjournal)) %>
 <%= render '/shared/sidebar' %>
   <div class="span9">
       <div class="center kevin-unit">
@@ -11,17 +11,17 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @ielt.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"ielt_score\"/, "ielt_score").gsub(/\"ielt_date\"/, "ielt_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+    var chartData = <%= raw @toeicsw.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"toeicsw_s\"/, "toeicsw_s").gsub(/\"toeicsw_w\"/, "toeicsw_w").gsub(/\"toeicsw_date\"/, "toeicsw_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART
                 chart = new AmCharts.AmSerialChart();
                 chart.dataProvider = chartData;
-                chart.categoryField = "ielt_date";
+                chart.categoryField = "toeicsw_date";
                 chart.columnWidth = 0.5 ;
 
                 // TITLE
-                chart.addTitle("IELTSのスコア", 15);
+                chart.addTitle("TOEIC® SWのスコア", 15);
 
                 // AXES
                 // category
@@ -38,26 +38,39 @@
                 valueAxis.stackType = "regular";
                 valueAxis.gridAlpha = 0.1;
                 valueAxis.axisAlpha = 0;
-                valueAxis.maximum = 9
+                valueAxis.maximum = 400
                 chart.addValueAxis(valueAxis);
 
                 // GRAPHS
-                // CASEC Section 1    
+                // TOEIC® Bridge Reading    
                 var graph = new AmCharts.AmGraph();
-                graph.title = "IELTS Score";
+                graph.title = "TOEIC® SW<%=t :ts_score %>";
                 graph.labelText = "[[value]]";
-                graph.valueField = "ielt_score";
+                graph.valueField = "toeicsw_s";
                 graph.type = "column";
                 graph.lineAlpha = 0;
                 graph.fillAlphas = 1;
-                graph.lineColor = "#329898";
+                graph.lineColor = "#4265a6";
+                graph.color = '#ffffff';
+                chart.addGraph(graph);
+
+
+                // TOEIC® Bridge Listening             
+                graph = new AmCharts.AmGraph();
+                graph.title = "TOEIC® SW<%=t :tw_score %>";
+                graph.labelText = "[[value]]";
+                graph.valueField = "toeicsw_w";
+                graph.type = "column";
+                graph.lineAlpha = 0;
+                graph.fillAlphas = 1;
+                graph.lineColor = "#91a6cc";
                 graph.color = '#ffffff';
                 chart.addGraph(graph);
 
                  // HORIZONTAL GREEN RANGE
                 var guide = new AmCharts.Guide();
-                guide.value = 7;
-                guide.toValue = 8.5;
+                guide.value = 365;
+                guide.toValue = 390;
                 guide.fillColor = "#00CC00";
                 guide.inside = true;
                 guide.fillAlpha = 0.2;

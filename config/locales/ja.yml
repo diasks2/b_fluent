@@ -23,15 +23,20 @@ ja:
   input_toefli: TOEFL® iBTスコアを保存
   input_ielt: IELTSスコアを保存
   input_bridge: TOEIC® Bridgeスコアを保存
+  input_toeicsw: TOEIC® SWスコアを保存
   tl_score: リスニングスコア
   tr_score: リーディングスコア
+  ts_score: スピーキングスコア
+  tw_score: ライティングスコア
   xbridge_r: TOEIC® Bridgeのリーディングスコア
   xbridge_l: TOEIC® Bridgeのリスニングスコア
+  xtoeicsw_s: TOEIC® SWのスピーキングスコア
+  xtoeicsw_w: TOEIC® SWのライティングスコア
   xc_one: CASEC セクション1のスコア
   xc_two: CASEC セクション2のスコア
   xc_three: CASEC セクション3のスコア
   xc_four: CASEC セクション4のスコア
-  toeic_date: TOEIC®テストの年月日
+  toeic_date: TOEIC®の試験日
   ttotal_score: TOEIC®スコア
   test_date: 試験日
   toeicjournal: TOEIC®の勉強手帳
@@ -39,6 +44,7 @@ ja:
   toeflijournal: TOEFL® iBTの勉強手帳
   ieltjournal: IELTSの勉強手帳
   bridgejournal: TOEIC® Bridgeの勉強手帳
+  toeicswjournal: TOEIC® SWの勉強手帳
   invalidemail: メールアドレスと、パスワードの組み合わせがまちがっているりょうです。
   account: アカウント
   settings: アカウント情報
@@ -53,18 +59,22 @@ ja:
         password: パスワード
         password_confirmation: パスワードの再入力
       toeictest:
-        t_date: TOEIC®テストの年月日
+        t_date: TOEIC®の試験日
         l_score: TOEIC®のリスニングスコア
         r_score: TOEIC®のリーディングスコア
       bridge:
-        bridge_date: TOEIC® Bridgeテストの年月日
+        bridge_date: TOEIC® Bridgeの試験日
         bridge_r: TOEIC® Bridgeのリーディングスコア
         bridge_l: TOEIC® Bridgeのリスニングスコア
+      toeicsw:
+        toeicsw_date: TOEIC® SWの試験日
+        toeicsw_s: TOEIC® SWのスピーキングスコア
+        toeicsw_w: TOEIC® SWのライティングスコア
       ielt:
-        ielt_date: IELTSテストの年月日
+        ielt_date: IELTSの試験日
         ielt_score: IELTSのスコア
       casec:
-        c_date: CASECテストの年月日
+        c_date: CASECの試験日
         c_one: CASEC セクション1のスコア
         c_two: CASEC セクション2のスコア
         c_three: CASEC セクション3のスコア
@@ -74,7 +84,7 @@ ja:
         toefli_w: TOEFL® iBTのライティングスコア
         toefli_l: TOEFL® iBTのリスニングスコア
         toefli_s: TOEFL® iBTのスピーキングスコア
-        toefli_date: TOEFL® iBTのテストの年月日
+        toefli_date: TOEFL® iBTの試験日
   date:
     abbr_day_names:
     - 日

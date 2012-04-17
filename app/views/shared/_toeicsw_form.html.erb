@@ -9,24 +9,24 @@
               </div>
               <div class="span9">
                <div class="well">
-               	 <h1>TOEIC® Bridge</h1>
-                 <%= form_for(@bridge) do |f| %>
+               	 <h1>TOEIC® SW</h1>
+                 <%= form_for(@toeicsw) do |f| %>
                  <%= render 'shared/error_messages', object: f.object %>
                  <div class="span3">
                  <p><label for="date"><%=t :test_date %></label></p> 
-                 <%= f.datepicker :bridge_date %>
+                 <%= f.datepicker :toeicsw_date %>
                  </div>
                  <div class="span5">
-                 <p><label for="amount_bone">TOEIC®のリスニングスコア:</label></p>
-                 <div id="slider_bone" class="slider"></div>
-	             <div id="amount_bone" class="slider_num">60</div>
-	             <p><label for="amount_btwo">TOEIC® Bridgeのリーディングスコア:</label></p>
-                 <div id="slider_btwo"></div>
-                 <div id="amount_btwo" class="slider_num" />60</div>
+                 <p><label for="amount_swone">TOEIC® SWのスピーキングスコア:</label></p>
+                 <div id="slider_swone" class="slider"></div>
+	             <div id="amount_swone" class="slider_num">150</div>
+	             <p><label for="amount_swtwo">TOEIC® SWのライティングスコア:</label></p>
+                 <div id="slider_swtwo"></div>
+                 <div id="amount_swtwo" class="slider_num" />150</div>
              </div>
-                 <%= f.hidden_field :bridge_l %>
-                 <%= f.hidden_field :bridge_r %>
-                 <div class="center"><%= f.submit I18n.t(:input_bridge), class: "btn btn-large btn-primary" %></div>
+                 <%= f.hidden_field :toeicsw_s %>
+                 <%= f.hidden_field :toeicsw_w %>
+                 <div class="center"><%= f.submit I18n.t(:input_toeicsw), class: "btn btn-large btn-primary" %></div>
                  <% end %>
                 </div>
               </div> 
@@ -36,37 +36,37 @@
 <script>
 $(document).ready(function() {
 	$(function() {
-		$( "#slider_bone" ).slider({
-			value: 60,
-			min: 10,
-			max: 90,
-			step: 2,
+		$( "#slider_swone" ).slider({
+			value: 150,
+			min: 0,
+			max: 200,
+			step: 10,
 			slide: function( event, ui ) {
-				$( "#amount_bone" ).html( ui.value );
+				$( "#amount_swone" ).html( ui.value );
 			},
 
 			change: function(event, ui) {
-            $('input#bridge_bridge_l').val(ui.value);
+            $('input#toeicsw_toeicsw_s').val(ui.value);
             }
 		});
-		$( "#amount_bone" ).val( $( "#slider_bone" ).slider( "value" ) );
+		$( "#amount_swone" ).val( $( "#slider_swone" ).slider( "value" ) );
 	});
 
 	$(function() {
-		$( "#slider_btwo" ).slider({
-			value: 60,
-			min: 10,
-			max: 90,
-			step: 2,
+		$( "#slider_swtwo" ).slider({
+			value: 150,
+			min: 0,
+			max: 200,
+			step: 10,
 			slide: function( event, ui ) {
-				$( "#amount_btwo" ).html( ui.value );
+				$( "#amount_swtwo" ).html( ui.value );
 			},
 
 			change: function(event, ui) {
-            $('input#bridge_bridge_r').val(ui.value);
+            $('input#toeicsw_toeicsw_w').val(ui.value);
             }
 		});
-		$( "#amount_btwo" ).val( $( "#slider_btwo" ).slider( "value" ) );
+		$( "#amount_swtwo" ).val( $( "#slider_swtwo" ).slider( "value" ) );
 	});
 
 	$(function() {

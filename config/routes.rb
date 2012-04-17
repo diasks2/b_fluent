@@ -7,6 +7,7 @@ BFluent::Application.routes.draw do
   resources :toeflis, only: [:new, :create, :destroy]
   resources :ielts, only: [:new, :create, :destroy]
   resources :bridges, only: [:new, :create, :destroy]
+  resources :toeicsws, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
 
@@ -23,6 +24,8 @@ BFluent::Application.routes.draw do
   match '/ielt_journal', to: 'ielts#ieltjournal'
   match '/bridge_input', to: 'bridges#new'
   match '/bridge_journal', to: 'bridges#bridgejournal'
+  match '/toeicsw_input', to: 'toeicsws#new'
+  match '/toeicsw_journal', to: 'toeicsws#toeicswjournal'
 
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'

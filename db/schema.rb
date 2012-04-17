@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417134149) do
+ActiveRecord::Schema.define(:version => 20120417224247) do
 
   create_table "bridges", :force => true do |t|
     t.integer  "bridge_l"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20120417134149) do
   add_index "casecs", ["user_id", "c_date"], :name => "index_casecs_on_user_id_and_c_date"
 
   create_table "ielts", :force => true do |t|
-    t.integer  "ielt_score"
+    t.float    "ielt_score"
     t.date     "ielt_date"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
@@ -60,8 +60,19 @@ ActiveRecord::Schema.define(:version => 20120417134149) do
 
   add_index "toeflis", ["user_id", "toefli_date"], :name => "index_toeflis_on_user_id_and_toefli_date"
 
+  create_table "toeicsws", :force => true do |t|
+    t.integer  "toeicsw_s"
+    t.integer  "toeicsw_w"
+    t.date     "toeicsw_date"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "toeicsws", ["user_id", "toeicsw_date"], :name => "index_toeicsws_on_user_id_and_toeicsw_date"
+
   create_table "toeictests", :force => true do |t|
-    t.datetime "t_date"
+    t.date     "t_date"
     t.integer  "l_score"
     t.integer  "r_score"
     t.integer  "user_id"
@@ -74,13 +85,11 @@ ActiveRecord::Schema.define(:version => 20120417134149) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "admin",                  :default => false
-    t.string   "password_reset_token"
-    t.datetime "password_reset_sent_at"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

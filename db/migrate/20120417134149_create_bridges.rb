@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateBridges < ActiveRecord::Migration
   def change
     create_table :bridges do |t|

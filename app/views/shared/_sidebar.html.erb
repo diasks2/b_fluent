@@ -18,7 +18,7 @@
                   <li><%= link_to 'CASEC', casec_input_path %></li>
                   <li><%= link_to 'IELTS', ielt_input_path %></li>
                   <li><%= link_to 'TOEIC® Bridge', bridge_input_path %></li>
-                  <li><%= link_to 'TOEIC® SW', '#' %></li>
+                  <li><%= link_to 'TOEIC® SW', toeicsw_input_path %></li>
                   </ul>
                   </div>
                   </div>
@@ -30,7 +30,7 @@
               <li class="<%= 'active' if current_page?(casec_journal_path) %>"><%= link_to "CASEC", casec_journal_path %></li>
               <li class="<%= 'active' if current_page?(ielt_journal_path) %>"><%= link_to "IELTS", ielt_journal_path %></li>
               <li class="<%= 'active' if current_page?(bridge_journal_path) %>"><%= link_to "TOEIC® Bridge", bridge_journal_path %></li>
-              <li ><%= link_to "TOEIC® SW", '#' %></li>
+              <li class="<%= 'active' if current_page?(toeicsw_journal_path) %>"><%= link_to "TOEIC® SW", toeicsw_journal_path %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

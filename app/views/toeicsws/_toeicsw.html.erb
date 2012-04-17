@@ -1,0 +1,11 @@
+<div class="well">
+  <p><span class="toeicsw_s"><%=t :xtoeicsw_s %>: <%= toeicsw.toeicsw_s %></span></p>
+  <p><span class="toeicsw_w"><%=t :xtoeicsw_w %>: <%= toeicsw.toeicsw_w %></span></p>
+   <div id="textbox">
+  <p class="alignleft"><span class="timestamp"><%=t :toeicsw_date %>: <%= toeicsw.toeicsw_date.to_s(:j_date) %></span></p>
+   <p class="alignright"><% if current_user?(toeicsw.user) %>
+    <%= link_to content_tag('i', '', class: 'icon-trash'), toeicsw, confirm: "Are you sure you want to delete?", method: :delete %>
+  <% end %></p>
+  <div style="clear: both;"></div>
+</div>
+</div>

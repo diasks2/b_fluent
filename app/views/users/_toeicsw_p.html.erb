@@ -1,0 +1,11 @@
+<div id="toeicsw_pages" class="score_pages">
+<% if @user.toeicsws.any? %>
+
+<h2>TOEIC® SW Tests (<%= @user.toeicsws.count %>)</h2>
+<%= will_paginate @toeicsws, :param_name => :toeicsws_page %>
+<ol class="toeicsws">
+<%= render @toeicsws %>
+</ol>
+<%= will_paginate @toeicsws, :param_name => :toeicsws_page %>
+<% end %>
+</div>
