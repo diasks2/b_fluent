@@ -1,6 +1,6 @@
  <div class="well">
   <p><span class="eiken_level"><%=t :xeiken_level %>: <%= eiken.eiken_level %></span></p>
-  <p><span class="eiken_result"><%=t :xekien_result %>: <%= eiken.eiken_result %></span></p>
+  <p><span class="eiken_result"><%=t :xeiken_result %>: <%= if eiken.eiken_result = "true" %>Penis<% else%>tutyy<% end%></span></p>
   <div id="textbox">
   <p class="alignleft"><span class="timestamp">STEP 英検 Date: <%= eiken.eiken_date.to_s(:j_date) %></span></p>
   <p class="alignright"><% if current_user?(eiken.user) %>
