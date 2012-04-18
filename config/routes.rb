@@ -8,6 +8,7 @@ BFluent::Application.routes.draw do
   resources :ielts, only: [:new, :create, :destroy]
   resources :bridges, only: [:new, :create, :destroy]
   resources :toeicsws, only: [:new, :create, :destroy]
+  resources :eikens, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
 
@@ -26,6 +27,8 @@ BFluent::Application.routes.draw do
   match '/bridge_journal', to: 'bridges#bridgejournal'
   match '/toeicsw_input', to: 'toeicsws#new'
   match '/toeicsw_journal', to: 'toeicsws#toeicswjournal'
+  match '/eiken_input', to: 'eikens#new'
+  match '/eiken_journal', to: 'eikens#eikenjournal'
 
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'

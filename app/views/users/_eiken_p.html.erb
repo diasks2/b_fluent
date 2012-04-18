@@ -1,0 +1,11 @@
+<div id="eiken_pages" class="score_pages">
+<% if @user.eikens.any? %>
+
+<h2>STEP 英検 Tests (<%= @user.eikens.count %>)</h2>
+<%= will_paginate @eikens, :param_name => :eikens_page %>
+<ol class="eikens">
+<%= render @eikens %>
+</ol>
+<%= will_paginate @eikens, :param_name => :eikens_page %>
+<% end %>
+</div>

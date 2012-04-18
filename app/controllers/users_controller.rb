@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @ielts = @user.ielts.paginate(page: params[:ielts_page], per_page: 5)
     @bridges = @user.bridges.paginate(page: params[:bridges_page], per_page: 5)
     @toeicsws = @user.toeicsws.paginate(page: params[:toeicsws_page], per_page: 5)
+    @eikens = @user.eikens.paginate(page: params[:eikens_page], per_page: 5)
   end
 
   def new

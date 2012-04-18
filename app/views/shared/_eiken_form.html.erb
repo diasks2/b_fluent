@@ -1,0 +1,55 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<div class="container">
+	      <div class="row">
+              <div class="span3">
+        	    <div class="well">
+                <%= image_tag("BigB2.png", alt: "BiFluent 'B' logo") %>
+                </div>
+              </div>
+              <div class="span9">
+               <div class="well">
+               	 <h1>STEP 英検</h1>
+                 <%= form_for(@eiken) do |f| %>
+                 <%= render 'shared/error_messages', object: f.object %>
+                 <div class="span3">
+                   <p><label for="date"><%=t :test_date %></label></p> 
+                   <%= f.datepicker :eiken_date %>
+                 </div>
+                 <div class="span5">
+                <%= f.select :eiken_level, options_for_select([['5級', 7], ['4級', 6], ['3級', 5], ['準2級', 4], ['2級', 3], ['準1級', 2], ['1級', 1]]), :prompt => 'レベルを選んでください。' %>
+                <%= f.select :eiken_result, options_for_select([['合格', true], ['不合格', false]], true) %>
+                 </div>
+                 <div class="center"><%= f.submit I18n.t(:input_eiken), class: "btn btn-large btn-primary" %></div>
+                 <% end %>
+                </div>
+              </div> 
+           </div>
+</div>
+
+<script>
+$(document).ready(function() {
+	$(function() {
+		$( "#datepicker" ).datepicker();
+		$.datepicker.regional['ja'] = {
+		closeText: '閉じる',
+		prevText: '&#x3c;前',
+		nextText: '次&#x3e;',
+		currentText: '今日',
+		monthNames: ['1月','2月','3月','4月','5月','6月',
+		'7月','8月','9月','10月','11月','12月'],
+		monthNamesShort: ['1月','2月','3月','4月','5月','6月',
+		'7月','8月','9月','10月','11月','12月'],
+		dayNames: ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
+		dayNamesShort: ['日','月','火','水','木','金','土'],
+		dayNamesMin: ['日','月','火','水','木','金','土'],
+		weekHeader: '週',
+		dateFormat: 'yy/mm/dd',
+		firstDay: 0,
+		isRTL: false,
+		showMonthAfterYear: true,
+		yearSuffix: '年'};
+	$.datepicker.setDefaults($.datepicker.regional['ja']);
+	});
+});
+</script>

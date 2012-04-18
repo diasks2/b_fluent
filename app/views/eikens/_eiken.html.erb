@@ -1,0 +1,13 @@
+ <div class="well">
+  <p><span class="eiken_level"><%=t :xeiken_level %>: <%= eiken.eiken_level %></span></p>
+  <p><span class="eiken_result"><%=t :xekien_result %>: <%= eiken.eiken_result %></span></p>
+  <div id="textbox">
+  <p class="alignleft"><span class="timestamp">STEP 英検 Date: <%= eiken.eiken_date.to_s(:j_date) %></span></p>
+  <p class="alignright"><% if current_user?(eiken.user) %>
+    <%= link_to content_tag('i', '', class: 'icon-trash'), casec, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   eiken.eiken_date %>
+  <% end %>
+<div style="clear: both;"></div>
+</div>
+</div>

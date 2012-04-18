@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417224247) do
+ActiveRecord::Schema.define(:version => 20120417235233) do
 
   create_table "bridges", :force => true do |t|
     t.integer  "bridge_l"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(:version => 20120417224247) do
   end
 
   add_index "casecs", ["user_id", "c_date"], :name => "index_casecs_on_user_id_and_c_date"
+
+  create_table "eikens", :force => true do |t|
+    t.integer  "eiken_level"
+    t.boolean  "eiken_result"
+    t.date     "eiken_date"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "eikens", ["user_id", "eiken_date"], :name => "index_eikens_on_user_id_and_eiken_date"
 
   create_table "ielts", :force => true do |t|
     t.float    "ielt_score"

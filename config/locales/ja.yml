@@ -24,6 +24,7 @@ ja:
   input_ielt: IELTSスコアを保存
   input_bridge: TOEIC® Bridgeスコアを保存
   input_toeicsw: TOEIC® SWスコアを保存
+  input_eiken: STEP 英検を保存
   tl_score: リスニングスコア
   tr_score: リーディングスコア
   ts_score: スピーキングスコア
@@ -36,6 +37,15 @@ ja:
   xc_two: CASEC セクション2のスコア
   xc_three: CASEC セクション3のスコア
   xc_four: CASEC セクション4のスコア
+  xgrade5: STEP 英検の5級　
+  xgrade4: STEP 英検の4級
+  xgrade3: STEP 英検の3級
+  xgradepre2: STEP 英検の準2級
+  xgrade2: STEP 英検の2級
+  xgradepre1: STEP 英検の準1級
+  xgrade1: STEP 英検の1級
+  xeiken_level: STEP 英検の級
+  xeiken_result: STEP 英検の結果
   toeic_date: TOEIC®の試験日
   ttotal_score: TOEIC®スコア
   test_date: 試験日
@@ -79,12 +89,16 @@ ja:
         c_two: CASEC セクション2のスコア
         c_three: CASEC セクション3のスコア
         c_four: CASEC セクション4のスコア
-      toefli:  
+      toefli:
         toefli_r: TOEFL® iBTのリーディングスコア
         toefli_w: TOEFL® iBTのライティングスコア
         toefli_l: TOEFL® iBTのリスニングスコア
         toefli_s: TOEFL® iBTのスピーキングスコア
         toefli_date: TOEFL® iBTの試験日
+      eiken:
+        eiken_level: STEP 英検の級
+        eiken_result: STEP 英検の結果
+        eiken_date: STEP 英検の試験日
   date:
     abbr_day_names:
     - 日

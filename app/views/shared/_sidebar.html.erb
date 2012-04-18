@@ -13,7 +13,7 @@
                   </a>
                   <ul class="dropdown-menu">
                   <li><%= link_to 'TOEIC®', toeic_input_path %></li>
-                  <li><%= link_to 'STEP 英検', '#' %></li>
+                  <li><%= link_to 'STEP 英検', eiken_input_path %></li>
                   <li><%= link_to 'TOEFL® iBT', toefli_input_path %></li>
                   <li><%= link_to 'CASEC', casec_input_path %></li>
                   <li><%= link_to 'IELTS', ielt_input_path %></li>
@@ -25,7 +25,7 @@
               <li class="nav-header">勉強手帳</li>
               <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "BiFluent", root_path %></li>
               <li class="<%= 'active' if current_page?(toeic_journal_path) %>"><%= link_to "TOEIC®", toeic_journal_path %></li>
-              <li ><%= link_to "STEP 英検", '#' %></li>
+              <li class="<%= 'active' if current_page?(eiken_journal_path) %>"><%= link_to "STEP 英検", eiken_journal_path %></li>
               <li class="<%= 'active' if current_page?(toefli_journal_path) %>"><%= link_to "TOEFL® iBT", toefli_journal_path %></li>
               <li class="<%= 'active' if current_page?(casec_journal_path) %>"><%= link_to "CASEC", casec_journal_path %></li>
               <li class="<%= 'active' if current_page?(ielt_journal_path) %>"><%= link_to "IELTS", ielt_journal_path %></li>
