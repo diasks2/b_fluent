@@ -15,7 +15,11 @@
 
   <div class="span9">
       <div class="center kevin-unit">
-          <%= image_tag("eiken_badge1.png", alt: "STEP 英検の1級") %>
+        <% if eiken.eiken_level.include?(5) %>
+         <%= image_tag("eiken5c.png", alt: "STEP 英検の5級") %>
+         <% else %>
+          <%= image_tag("eiken5bw.png", alt: "STEP 英検の5級") %>
+          <% end %>
       </div>
   </div>
 </div><!--/.sidebar row -->
