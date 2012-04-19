@@ -1,1 +1,23 @@
-eikenjournal.html.erb
+<% provide(:title, I18n.t(:eikenjournal)) %>
+<%= render '/shared/sidebar' %>
+<% if @eiken.blank? %>
+<div class="span9">
+      <div class="center kevin-unit">
+          <div class="blank_box">
+                <div><%= link_to "STEP 英検のスコアを入れて", eiken_input_path, class: "btn btn-danger" %>
+                </div>
+          </div>      
+      </div>
+  </div>
+</div><!--/.sidebar row -->
+</div><!--/.sidebar container -->
+<% else %>
+
+  <div class="span9">
+      <div class="center kevin-unit">
+          <p>Eiken Badges Go Here!</p>
+      </div>
+  </div>
+</div><!--/.sidebar row -->
+</div><!--/.sidebar container -->
+<% end %>
