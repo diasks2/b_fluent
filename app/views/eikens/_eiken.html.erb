@@ -1,5 +1,5 @@
  <div class="well">
-  <p><span class="eiken_level"><%=t :xeiken_level %>: <%= eiken.eiken_level %></span></p>
+  <p><span class="eiken_level"><%=t :xeiken_level %>: <% if eiken.eiken_level == 1 %>1級<% elsif eiken.eiken_level == 2 %>準1級<% elsif eiken.eiken_level == 3 %>2級<% elsif eiken.eiken_level == 4 %>準2級<% elsif eiken.eiken_level == 5 %>3級<% elsif eiken.eiken_level == 6 %>4級<% elsif eiken.eiken_level == 7 %>5級<% end %></span></p>
   <p><span class="eiken_result"><%=t :xeiken_result %>: <% if eiken.eiken_result == true %>合格<% else %>不合格<% end %></span></p>
   <div id="textbox">
   <p class="alignleft"><span class="timestamp">STEP 英検 Date: <%= eiken.eiken_date.to_s(:j_date) %></span></p>
