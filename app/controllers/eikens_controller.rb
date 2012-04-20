@@ -5,6 +5,7 @@ class EikensController < ApplicationController
 
 def eikenjournal
   @eiken = current_user.eikens.paginate(page: params[:page]) if signed_in?
+  @eikens = current_user.eikens.where(eiken_level: 5, eiken_result: true) if signed_in?
 end
 
 def new
