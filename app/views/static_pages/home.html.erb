@@ -9,15 +9,11 @@
 </div><!--/.sidebar container -->
 <% else %>
 
-<div class="center kevin-unit">
- <div class="row">
+<div class="center frontpage-unit">
+     <div class="logo_header"><%= image_tag("legal_pad_cover.png", alt: "BiFluent") %>
 
-       <div class="span12">
-        <%= image_tag("HomePage_Logo.png", alt: "BiFluent") %>
-        <%= image_tag("B_Video.png", alt: "BiFluent Video", :class => "video-play", :mouseover => "B2_Video.png") %>
-      </div>
-   </div>
-
+      <%= image_tag("B_Video.png", alt: "BiFluent Video", :class => "video-play", :mouseover => "B2_Video.png") %>
+</div>
    <div class="signup_title">
       <%= image_tag("home_level.png", alt: "あなたの英語のレベルを知っていますか？") %>
       <div class="main_button">

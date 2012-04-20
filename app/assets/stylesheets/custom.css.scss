@@ -49,6 +49,16 @@ textarea {
   }
 }
 
+.frontpage-unit {
+  background: url('/assets/notebook_texture.png');
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
 .kevin-unit {
   background: url('/assets/notebook_texture.png');
   padding: 30px;
@@ -123,8 +133,10 @@ img { max-width: 100%; }
 .logo_header {
  position:relative;
 }
-.homep_video {
- float:right;
+.video-play {
+ position:absolute;
+ top: 10px;
+ right: 10px;
 }
 .signup_title {
  clear:both;
