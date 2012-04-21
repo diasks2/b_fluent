@@ -52,7 +52,7 @@
                 graph.fillAlphas = 1;
                 graph.lineColor = "#4265a6";
                 graph.color = '#ffffff';
-                graph.balloonText = "[[t_date]] TOEIC®<%=t :tr_score %>:[[value]]"
+                graph.balloonText = "[[t_date]] TOEIC®<%=t :tr_score %>: [[value]]"
                 chart.addGraph(graph);
 
 
@@ -66,7 +66,7 @@
                 graph.fillAlphas = 1;
                 graph.lineColor = "#91a6cc";
                 graph.color = '#ffffff';
-                graph.balloonText = "[[t_date]] TOEIC®<%=t :tl_score %>:[[value]]"
+                graph.balloonText = "[[t_date]] TOEIC®<%=t :tl_score %>: [[value]]"
                 chart.addGraph(graph);
 
                  // HORIZONTAL GREEN RANGE
@@ -84,7 +84,7 @@
                 chart.addLegend(legend);
                 legend.align = "center";
                 legend.rollOverColor = "#81c341"
-                legend.switchType = "v";
+                legend.rollOverGraphAlpha = 0.5
 
                 // WRITE
                 chart.write("chartdiv");
