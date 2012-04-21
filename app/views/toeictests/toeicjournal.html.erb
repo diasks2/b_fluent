@@ -45,13 +45,14 @@
                 // TOEIC® Reading    
                 var graph = new AmCharts.AmGraph();
                 graph.title = "TOEIC®<%=t :tr_score %>";
-                graph.labelText = "[[t_date]] TOEIC®<%=t :tr_score %>:[[value]]";
+                graph.labelText = "[[value]]";
                 graph.valueField = "r_score";
                 graph.type = "column";
                 graph.lineAlpha = 0;
                 graph.fillAlphas = 1;
                 graph.lineColor = "#4265a6";
                 graph.color = '#ffffff';
+                graph.balloonText = "[[t_date]] TOEIC®<%=t :tr_score %>:[[value]]"
                 chart.addGraph(graph);
 
 
