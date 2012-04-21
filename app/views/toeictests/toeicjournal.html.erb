@@ -66,6 +66,7 @@
                 graph.fillAlphas = 1;
                 graph.lineColor = "#91a6cc";
                 graph.color = '#ffffff';
+                graph.balloonText = "[[t_date]] TOEIC®<%=t :tl_score %>:[[value]]"
                 chart.addGraph(graph);
 
                  // HORIZONTAL GREEN RANGE
@@ -82,6 +83,8 @@
                 var legend = new AmCharts.AmLegend();
                 chart.addLegend(legend);
                 legend.align = "center";
+                legend.rollOverColor = "#00CC00"
+                legend.switchType = "v";
 
                 // WRITE
                 chart.write("chartdiv");
