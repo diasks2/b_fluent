@@ -5,8 +5,13 @@ class EikensController < ApplicationController
 
 def eikenjournal
   @eiken = current_user.eikens.paginate(page: params[:page]) if signed_in?
-  @eikens = current_user.eikens.where(eiken_level: 7, eiken_result: true).paginate(page: params[:page]) if signed_in?
-
+  @lfive = current_user.eikens.where(eiken_level: 7, eiken_result: true).paginate(page: params[:page]) if signed_in?
+  @lfour = current_user.eikens.where(eiken_level: 6, eiken_result: true).paginate(page: params[:page]) if signed_in?
+  @lthree = current_user.eikens.where(eiken_level: 5, eiken_result: true).paginate(page: params[:page]) if signed_in?
+  @lpretwo = current_user.eikens.where(eiken_level: 4, eiken_result: true).paginate(page: params[:page]) if signed_in?
+  @ltwo = current_user.eikens.where(eiken_level: 3, eiken_result: true).paginate(page: params[:page]) if signed_in?
+  @lpreone = current_user.eikens.where(eiken_level: 2, eiken_result: true).paginate(page: params[:page]) if signed_in?
+  @lone = current_user.eikens.where(eiken_level: 1, eiken_result: true).paginate(page: params[:page]) if signed_in?
 end
 
 def new

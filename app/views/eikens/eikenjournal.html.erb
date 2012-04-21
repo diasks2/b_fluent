@@ -15,18 +15,49 @@
 
   <div class="span9">
       <div class="center kevin-unit">
-<%= debug @eikens %>
-<%= debug @eiken %>
 
-<%= @eikens.any? %>
-
-<%= @eiken.any?{ |eiken| eiken.eiken_level == 7 && eiken.eiken_result == true } %>
-
-     <% if @eikens.blank? %>
+       <% if @lfive.any? %>
          <%= image_tag("eiken5c.png", alt: "STEP 英検の5級") %>
        <% else %>
          <%= image_tag("eiken5bw.png", alt: "STEP 英検の5級") %>
-      <% end %>
+       <% end %>
+
+       <% if @lfour.any? %>
+         <%= image_tag("eiken4c.png", alt: "STEP 英検の5級") %>
+       <% else %>
+         <%= image_tag("eiken4bw.png", alt: "STEP 英検の5級") %>
+       <% end %>
+
+       <% if @lthree.any? %>
+         <%= image_tag("eiken3c.png", alt: "STEP 英検の5級") %>
+       <% else %>
+         <%= image_tag("eiken3bw.png", alt: "STEP 英検の5級") %>
+       <% end %>
+
+       <% if @lpretwo.any? %>
+         <%= image_tag("eikenpre2c.png", alt: "STEP 英検の5級") %>
+       <% else %>
+         <%= image_tag("eikenpre2bw.png", alt: "STEP 英検の5級") %>
+       <% end %>
+
+       <% if @ltwo.any? %>
+         <%= image_tag("eiken2c.png", alt: "STEP 英検の5級") %>
+       <% else %>
+         <%= image_tag("eiken2bw.png", alt: "STEP 英検の5級") %>
+       <% end %>
+
+       <% if @lpreone.any? %>
+         <%= image_tag("eikenpre1c.png", alt: "STEP 英検の5級") %>
+       <% else %>
+         <%= image_tag("eikenpre1bw.png", alt: "STEP 英検の5級") %>
+       <% end %>
+
+       <% if @lone.any? %>
+         <%= image_tag("eiken1c.png", alt: "STEP 英検の5級") %>
+       <% else %>
+         <%= image_tag("eiken1bw.png", alt: "STEP 英検の5級") %>
+       <% end %>
+
       </div>
   </div>
 </div><!--/.sidebar row -->
