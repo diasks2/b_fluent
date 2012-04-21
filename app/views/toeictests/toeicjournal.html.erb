@@ -45,7 +45,7 @@
                 // TOEIC® Reading    
                 var graph = new AmCharts.AmGraph();
                 graph.title = "TOEIC®<%=t :tr_score %>";
-                graph.labelText = "[[value]]";
+                graph.labelText = "[[t_date]] TOEIC®<%=t :tr_score %>:[[value]]";
                 graph.valueField = "r_score";
                 graph.type = "column";
                 graph.lineAlpha = 0;
