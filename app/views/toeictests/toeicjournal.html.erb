@@ -3,6 +3,10 @@
   <div class="span9">
       <div class="center kevin-unit">
           <div id="chartdiv" class="amchart"></div>
+          <p>緑の帯があなたの目標スコアです。(<%= link_to t(:profile),   current_user %>で設定することができます。）
+</p>
+</br>
+<p>項目をクリックすることによってその項目を表示したり、消したりすることができます。</p>
       </div>
   </div>
 </div><!--/.sidebar row -->
@@ -85,6 +89,7 @@
                 legend.align = "center";
                 legend.rollOverGraphAlpha = 0.3
                 legend.fontSize = 12
+                legend.fontWeight = "bold"
 
                 // WRITE
                 chart.write("chartdiv");
