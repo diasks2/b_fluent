@@ -68,6 +68,7 @@ ja:
   invalidemail: メールアドレスと、パスワードの組み合わせがまちがっているりょうです。
   account: アカウント
   settings: アカウント情報
+  remember_me: 保存する
   save_changes: 変更を保存
   change: 変更
   activerecord:

@@ -13,10 +13,19 @@
                   <HR>
                   </br>
                   <%= form_for(:session, :url => sessions_path) do |f| %>
+                  
                   <%= f.label I18n.t(:emailf) %>
                   <%= f.text_field :email %>
+                  
                   <%= f.label I18n.t(:passwordf) %>
                   <%= f.password_field :password %>
+
+                  <div>  
+                  <%= label_tag I18n.t(:remember_me) %>
+                  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+                  </div>
+
+                  </br>  
                   <%= f.submit t(:signin), :class => "btn btn-large btn-primary" %>  
                   <% end %>
                   <p><%=t :newuser %> <%= link_to I18n.t(:signup), signup_path %></p>
