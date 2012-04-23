@@ -4,7 +4,7 @@
 	      <div class="row">
               <div class="span3">
         	    <div class="well">
-                <%= image_tag("BigB2.png", alt: "BiFluent 'B' logo") %>
+                <%= image_tag("signin_image.png", alt: "BiFluent CASEC") %>
                 </div>
               </div>
               <div class="span9">
@@ -13,20 +13,20 @@
                  <%= form_for(@casec) do |f| %>
                  <%= render 'shared/error_messages', object: f.object %>
                  <div class="span3">
-                 <p><label for="date"><%=t :test_date %></label></p> 
+                 <p><label for="date"><%=t :xc_date %></label></p> 
                  <%= f.datepicker :c_date %>
                  </div>
                  <div class="span5">
-                 <p><label for="amount_one"><%=t :c_one %>:</label></p>
-                 <div id="slider_one" class="slider"></div>
+                 <p><label for="amount_one"><%=t :xc_one %>:</label></p>
+                 <div id="slider_one"></div>
 	             <div id="amount_one" class="slider_num">200</div>
-	             <p><label for="amount_two"><%=t :c_two %>:</label></p>
+	             <p><label for="amount_two"><%=t :xc_two %>:</label></p>
                  <div id="slider_two"></div>
                  <div id="amount_two" class="slider_num" />200</div>
-                 <p><label for="amount_three"><%=t :c_three %>:</label></p>
+                 <p><label for="amount_three"><%=t :xc_three %>:</label></p>
                  <div id="slider_three"></div>
                  <div id="amount_three" class="slider_num" />200</div>
-                 <p><label for="amount_four"><%=t :c_four %>:</label></p>
+                 <p><label for="amount_four"><%=t :xc_four %>:</label></p>
                  <div id="slider_four"></div>
                  <div id="amount_four" class="slider_num" />200</div>
              </div>

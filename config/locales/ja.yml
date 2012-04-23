@@ -41,6 +41,11 @@ ja:
   xtoefli_w: TOEFL® iBTのライティングスコア
   xtoefli_l: TOEFL® iBTのリスニングスコア
   xtoefli_s: TOEFL® iBTのスピーキングスコア
+  xc_date: CASECの試験日
+  xc_one: CASEC セクション1のスコア
+  xc_two: CASEC セクション2のスコア
+  xc_three: CASEC セクション3のスコア
+  xc_four: CASEC セクション4のスコア
   xgrade5: STEP 英検の5級　
   xgrade4: STEP 英検の4級
   xgrade3: STEP 英検の3級
