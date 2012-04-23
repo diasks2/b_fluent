@@ -1,36 +1,26 @@
 <% provide(:title, I18n.t(:signin)) %>
-
-
 <div class="container-fluid">
-	      <div class="row-fluid">
-        <div class="span3">
+	   <div class="row-fluid">
+        <div class="span4">
         	    <div class="well">
-<%= image_tag("BigB2.png", alt: "BiFluent 'B' logo") %>
+                  <%= image_tag("signin_image.png", alt: "BiFluent Signin") %>
 
-</div>
-</div>
-
- <div class="span6">
-
-<div class="well">
-<h1><%=t :signin %></h1>
-<HR>
-
-</br>
- 
-    <%= form_for(:session, :url => sessions_path) do |f| %>
-
-      <%= f.label I18n.t(:emailf) %>
-      <%= f.text_field :email %>
-
-      <%= f.label I18n.t(:passwordf) %>
-      <%= f.password_field :password %>
-
-      <%= f.submit t(:signin), :class => "btn btn-large btn-primary" %>
-    <% end %>
-
-     <p><%=t :newuser %> <%= link_to I18n.t(:signup), signup_path %></p>
-</div>
-</div>
-</div>
-</div>
+              </div><!--/well -->
+        </div><!--/span4 -->
+        <div class="span6">
+              <div class="well">
+                  <h1><%=t :signin %></h1>
+                  <HR>
+                  </br>
+                  <%= form_for(:session, :url => sessions_path) do |f| %>
+                  <%= f.label I18n.t(:emailf) %>
+                  <%= f.text_field :email %>
+                  <%= f.label I18n.t(:passwordf) %>
+                  <%= f.password_field :password %>
+                  <%= f.submit t(:signin), :class => "btn btn-large btn-primary" %>  
+                  <% end %>
+                  <p><%=t :newuser %> <%= link_to I18n.t(:signup), signup_path %></p>
+              </div><!--/well -->
+        </div> <!--/span6 -->
+    </div><!--/row-fluid -->
+</div> <!--/container-fluid -->

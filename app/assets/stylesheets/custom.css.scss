@@ -34,12 +34,10 @@ body {
 }
 section {
   overflow: auto;
-
 } 
 
 textarea {
   resize: vertical;
-
 }
 
 .center {
@@ -57,8 +55,8 @@ textarea {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-  -moz-box-shadow: 0 0 30px 5px #999;
-  -webkit-box-shadow: 0 0 20px 3px #999;
+  -moz-box-shadow: 0 0 30px 5px #fff;
+  -webkit-box-shadow: 0 0 20px 3px #fff;
 }
 
 .well-kev {
@@ -181,7 +179,7 @@ img { max-width: 100%; }
 }
 
 .pricing_button {
- margin-top: 15px
+ margin-top: 15px;
 }
 
 .kev {
@@ -314,7 +312,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 5px;
   text-align: center;
