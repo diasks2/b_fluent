@@ -29,9 +29,10 @@ BFluent::Application.routes.draw do
   match '/toeicsw_journal', to: 'toeicsws#toeicswjournal'
   match '/eiken_input', to: 'eikens#new'
   match '/eiken_journal', to: 'eikens#eikenjournal'
+  match '/contact' => 'contact#new', :as => 'contact', :via => :get
+  match '/contact' => 'contact#create', :as => 'contact', :via => :post
 
   match '/about',   to: 'static_pages#about'
-  match '/contact', to: 'static_pages#contact'
   match '/principles',    to: 'static_pages#principles'
   match '/pricing',    to: 'static_pages#pricing'
 

@@ -1,43 +1,8 @@
 <% provide(:title, I18n.t(:about)) %>
 <div class="center hero-unit">
 <h1><%=t :about %></h1>
-<p></p>
-
-   <a href="#" data-controls-modal="modal-from-dom" data-backdrop="true" class="video-play">play</a>
 
 </div>
-
-        <script type="text/javascript" src="/assets/modal-video.js"></script>
-        
-  <script charset="utf-8" type="text/javascript">
-    $(function() {
-        $('.video-play').click(function() {        
-            $('.my-modal').on('show', function() {
-              $('.my-modal').html($('#modal-contents').html());
-            }).on('hidden', function() {
-              $('.my-modal').html('');
-            }).modal({
-                backdrop: true,
-                keyboard: true
-            }).css({
-                width: 'auto',
-                'margin-left': function () {
-                    return -($(this).width() / 2);
-                }
-            });    
-        });
-      
-       
-    });
-  </script>
-  
-    <!-- modal content -->
-    <script type="text/html" id="modal-contents">
-      <iframe src="https://player.vimeo.com/video/37000763?byline=0&amp;portrait=0&amp;color=62d94e&amp;autoplay=1" width="750" height="422" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-    </script>
-  
-    <div id="modal-from-dom" class="modal fade my-modal">
-    </div>
       
  
               

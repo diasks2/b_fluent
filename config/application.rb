@@ -62,5 +62,19 @@ module BFluent
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_mailer.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => "bifluent.com",
+  :user_name            => "info@bifluent.com",
+  :password             => "kansai33",
+  :authentication       => :plain,
+  :enable_starttls_auto => true
+}
+
+config.action_mailer.default_url_options = {
+  :host => "bifluent.com"
+}
   end
 end
