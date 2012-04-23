@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateEikens < ActiveRecord::Migration
   def change
     create_table :eikens do |t|

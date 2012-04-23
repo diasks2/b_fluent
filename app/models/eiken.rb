@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Eiken < ActiveRecord::Base
   attr_accessible :eiken_result, :eiken_level, :eiken_date
   belongs_to :user
