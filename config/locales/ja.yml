@@ -10,8 +10,12 @@ ja:
   free_trial: 無料トライアル
   free_trial_start: 無料トライアルを始めよう
   signup: アカウント登録
+  namef: 名前　
   emailf: メールアドレス
   passwordf: パスワード
+  subjectf: 件名
+  bodyf: 本文
+  send: 送信
   profile: プロフィールを見る
   newuser: BiFluent始めませんか？
   signupnow: BiFluentに登録する
