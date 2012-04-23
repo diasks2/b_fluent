@@ -1,6 +1,6 @@
 <% provide(:title, I18n.t(:settings)) %> 
-<div class="container-fluid">
-     <div class="row-fluid">
+<div class="container">
+     <div class="row">
         <div class="span6 offset3">
             <div class="well">
                   <h1><%=t :update_profile %></h1>
@@ -20,12 +20,12 @@
                   <%= f.label :password_confirmation, "Confirm Password" %>
                   <%= f.password_field :password_confirmation %>
 
+                  <%= gravatar_for @user %>
+                  <a href="http://gravatar.com/emails"><%= t(:change) %></a>
+
                   <%= f.submit t(:save_changes), :class => "btn btn-large btn-primary" %>
                   <% end %>
 
-                  <%= gravatar_for @user %>
-                  <a href="http://gravatar.com/emails"><%= t(:change) %></a>
-                  
             </div><!--/well-->
         </div><!--/span -->
     </div><!--/row-fluid -->
