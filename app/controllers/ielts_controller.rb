@@ -4,7 +4,7 @@ class IeltsController < ApplicationController
   before_filter :correct_user,   only: :destroy
 
 def ieltjournal
-  @ielt = current_user.ielts.paginate(page: params[:page]) if signed_in?
+  @ielts = current_user.ielts.paginate(page: params[:page]) if signed_in?
 end
 
 def new

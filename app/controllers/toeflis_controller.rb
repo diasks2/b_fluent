@@ -4,7 +4,7 @@ class ToeflisController < ApplicationController
   before_filter :correct_user,   only: :destroy
 
 def toeflijournal
-  @toefli = current_user.toeflis.paginate(page: params[:page]) if signed_in?
+  @toeflis = current_user.toeflis.paginate(page: params[:page]) if signed_in?
 end
 
 def new

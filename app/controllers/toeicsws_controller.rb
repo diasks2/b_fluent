@@ -4,7 +4,7 @@ class ToeicswsController < ApplicationController
   before_filter :correct_user,   only: :destroy
 
 def toeicswjournal
-  @toeicsw = current_user.toeicsws.paginate(page: params[:page]) if signed_in?
+  @toeicsws = current_user.toeicsws.paginate(page: params[:page]) if signed_in?
 end
 
 def new

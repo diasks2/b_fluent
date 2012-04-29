@@ -11,7 +11,7 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @toeicsw.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"toeicsw_s\"/, "toeicsw_s").gsub(/\"toeicsw_w\"/, "toeicsw_w").gsub(/\"toeicsw_date\"/, "toeicsw_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+    var chartData = <%= convert_to_amcharts_json(@toeicsws) %>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART

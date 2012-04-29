@@ -11,7 +11,7 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @toefli.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"toefli_r\"/, "toefli_r").gsub(/\"toefli_w\"/, "toefli_w").gsub(/\"toefli_l\"/, "toefli_l").gsub(/\"toefli_s\"/, "toefli_s").gsub(/\"toefli_date\"/, "toefli_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+    var chartData = <%= convert_to_amcharts_json(@toeflis)%>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART

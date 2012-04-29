@@ -24,7 +24,7 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @casec.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"c_one\"/, "c_one").gsub(/\"c_two\"/, "c_two").gsub(/\"c_three\"/, "c_three").gsub(/\"c_four\"/, "c_four").gsub(/\"c_date\"/, "c_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+    var chartData = <%= convert_to_amcharts_json(@casecs) %>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART

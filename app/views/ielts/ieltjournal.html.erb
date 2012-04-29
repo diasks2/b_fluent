@@ -11,7 +11,7 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @ielt.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"ielt_score\"/, "ielt_score").gsub(/\"ielt_date\"/, "ielt_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+    var chartData = <%= convert_to_amcharts_json(@ielts) %>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART
