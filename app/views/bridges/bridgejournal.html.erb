@@ -11,7 +11,7 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= raw @bridge.to_json.gsub(/\"created_at\"/, "created_at").gsub(/\"id\"/, "id").gsub(/\"bridge_l\"/, "bridge_l").gsub(/\"bridge_r\"/, "bridge_r").gsub(/\"bridge_date\"/, "bridge_date").gsub(/\"updated_at\"/, "updated_at").gsub(/\"user_id\"/, "user_id") %>;
+    var chartData = <%= convert_to_amcharts_json(@bridge) %>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART
