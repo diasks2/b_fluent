@@ -11,7 +11,7 @@
 <script type="text/javascript">
             var chart;
 
-    var chartData = <%= convert_to_amcharts_json(@bridge) %>;
+    var chartData = <%= convert_to_amcharts_json(@bridges) %>;
 
             AmCharts.ready(function () {
                 // SERIAL CHART
