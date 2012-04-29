@@ -4,7 +4,7 @@ class BridgesController < ApplicationController
   before_filter :correct_user,   only: :destroy
 
 def bridgejournal
-  @bridge = current_user.bridges.paginate(page: params[:page]) if signed_in?
+  @bridges = current_user.bridges.paginate(page: params[:page]) if signed_in?
 end
 
 def new
