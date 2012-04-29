@@ -10,41 +10,43 @@
 <% else %>
 
 <div class="center frontpage-unit">
-     <div class="logo_header"><%= image_tag("legal_pad_cover.png", alt: "BiFluent") %>
 
-      <%= image_tag("B_Video.png", alt: "BiFluent Video", :class => "video-play", :mouseover => "B2_Video.png") %>
-</div>
-   <div class="signup_title">
-      <%= image_tag("home_level.png", alt: "あなたの英語のレベルを知っていますか？") %>
-      <div class="main_button">
-      <%= link_to I18n.t(:free_trial), signup_path, class: "btn btn-large btn-primary" %>
-      </div>
-   </div>
+    
 
+<div class="carousel-holder"> 
    <title>BiFluent</title>
     
         <div id="myCarousel" class="carousel slide">
             <div class="carousel-inner">
                 <div class="item active">
-                   <div class"kev"><%= image_tag("BiFluent_Home_1.png", alt: "BiFluent: 自分の英語試験の
-スコアを入れて") %></div>
+                   <div class"kev"><%= image_tag("BiFluent_Home_Large1.png", alt: "BiFluent: 自分の英語試験のスコアを入れて") %>
+                   </div>
+                   <div class="main_button">
+      <%= link_to I18n.t(:start), signup_path, class: "btn btn-large btn-primary" %>
+      </div>
                 </div>
                 <div class="item">
-                    <div class"kev"><%= image_tag("BiFluent_Home_2.png", alt: "BiFluent: 月毎にBiFluentの
-チェックテストを受けて") %></div>
-                </div>
+                    <div class"kev"><%= image_tag("BiFluent_Home_2.png", alt: "BiFluent: 月毎にBiFluentのチェックテストを受けて") %>
+                    </div>
+                </div>    
                 <div class="item">
-                  <div class"kev"><%= image_tag("BiFluent_Home_3.png", alt: "BiFluent: 簡単で見やすい勉強史
-と上達を確認できます。") %></div>
+                    <div class"kev"><%= image_tag("BiFluent_Home_3.png",alt: "BiFluent: 簡単で見やすい勉強史と上達を確認できます。") %>
+                    </div>
                 </div>
             </div>
+            
             <!-- Carousel nav -->
             <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
         </div>
-</div>
-</div>
-</div>
+
+
+  
+
+      </div>
+
+      </div>
+
 <% end %> 
 
 <script type="text/javascript">
@@ -108,41 +110,4 @@
                 // WRITE
                 chart.write("chartdiv");
             });
-        </script>
-       
-  <script charset="utf-8" type="text/javascript">
-    $(function() {
-        $('.video-play').click(function() {        
-            $('.my-modal').on('show', function() {
-              $('.my-modal').html($('#modal-contents').html());
-            }).on('hidden', function() {
-              $('.my-modal').html('');
-            }).modal({
-                backdrop: true,
-                keyboard: true
-            }).css({
-                width: 'auto',
-                'margin-left': function () {
-                    return -($(this).width() / 2);
-                }
-            });    
-        });
-      
-       
-    });
-  </script>
-
-    <!-- modal content -->
-    <script type="text/html" id="modal-contents">
-      <iframe src="https://player.vimeo.com/video/39962822?byline=0&amp;portrait=0&amp;color=62d94e&amp;autoplay=1" width="750" height="422" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-    </script>
-  
-    <div id="modal-from-dom" class="modal fade my-modal">
-    </div>
-
-
-
-
-
-
-
+</script>

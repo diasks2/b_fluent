@@ -3,13 +3,6 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
 }
-@import "bootstrap-responsive";
-
-@media (max-width: 979px) {
-body { /* Remove padding-top when navbar collapses for narrow viewports */
-padding-top: 0;
-}
-}
 
 /* mixins, variables, etc. */
 $background-color: #7fc837;
@@ -130,7 +123,6 @@ border-style:solid;
 border-color:$background-color;
 }
 
-
 .slider_num {
   margin-top: 10px;
   text-align: center;
@@ -173,8 +165,14 @@ img { max-width: 100%; }
  margin-bottom: 15px;
 }
 
+
+.carousel-holder {
+ position:relative;
+}
 .main_button {
- margin-top: 15px;
+position:absolute;
+top: 80%;
+right: 20%;
 }
 
 .pricing_button {
