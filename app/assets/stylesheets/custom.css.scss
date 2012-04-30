@@ -1,8 +1,4 @@
 @import "bootstrap";
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
 
 /* mixins, variables, etc. */
 $background-color: #7fc837;
@@ -10,7 +6,6 @@ $grayMediumLight: #eaeaea;
 $korange: #faa71a;
 
 /* universal */
-
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -24,6 +19,8 @@ $korange: #faa71a;
 
 body {
   background: $background-color url('/assets/BiFluentBackground.png') no-repeat top center;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 section {
   overflow: auto;
@@ -172,7 +169,7 @@ img { max-width: 100%; }
 .main_button {
 position:absolute;
 top: 80%;
-right: 20%;
+right: 20.5%;
 }
 
 .pricing_button {
