@@ -13,6 +13,9 @@ class UsersController < ApplicationController
     @bridges = @user.bridges.paginate(page: params[:bridges_page], per_page: 5)
     @toeicsws = @user.toeicsws.paginate(page: params[:toeicsws_page], per_page: 5)
     @eikens = @user.eikens.paginate(page: params[:eikens_page], per_page: 5)
+    @microposts = @user.microposts.paginate(page: params[:page])
+    @micropost = current_user.microposts.build if signed_in?
+    @feed_items = current_user.feed.paginate(page: params[:page])
   end
 
   def new

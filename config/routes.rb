@@ -9,6 +9,7 @@ BFluent::Application.routes.draw do
   resources :bridges, only: [:new, :create, :destroy]
   resources :toeicsws, only: [:new, :create, :destroy]
   resources :eikens, only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
 
   root to: 'static_pages#home'
 
